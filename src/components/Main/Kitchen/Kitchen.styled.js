@@ -8,11 +8,11 @@ export const KitchenConteiner = styled.div`
   /* margin-left: auto; */
   /* margin-right: auto; */
   background: aqua;
-  @media (min-width: 414px) {
+  /* @media (min-width: 414px) {
     width: 414px;
-  }
+  } */
   @media (min-width: 1024px) {
-    width: 940px;
+    /* width: 940px; */
     padding-left: 47px;
     padding-right: 60px;
     padding-top: 120px;
