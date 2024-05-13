@@ -14,7 +14,7 @@ export default function Slider() {
           <img src={fotoA} alt="iconSlider" width={100} height={100} />
         </li>
         <li>
-          <img src={fotoB} alt="icon" width={100} height={100} />
+          <img src={fotoB} alt="iconSlider" width={100} height={100} />
         </li>
         <li>
           <img src={fotoC} alt="icon" width={100} height={100} />
