@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import logo from "../../images/logo/logo.png";
 
 import { Container } from "../stylesheet/Container.styled";
@@ -16,10 +18,18 @@ export default function Header() {
             height={100}
           />
           <s.NavList>
-            <li>О компании</li>
-            <li>Проэкты</li>
-            <li>Услуги</li>
-            <li>Контакты</li>
+            <li>
+              <NavLink to="/">Главная</NavLink>
+            </li>
+            <li>
+              <NavLink to="/projects">Проэкты</NavLink>
+            </li>
+            <li>
+              <NavLink to="/services">Услуги</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contacts">Контакты</NavLink>
+            </li>
           </s.NavList>
           <div>kontakt</div>
         </s.HeaderBlock>

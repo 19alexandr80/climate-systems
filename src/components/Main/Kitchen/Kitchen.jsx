@@ -11,10 +11,11 @@ export default function Kitchen() {
         <s.KitchenCards>
           <s.KitchenCardRight>
             <s.KitchenCardRightText>
-              <h3>Ventilation</h3>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
+              <h3>Вентиляция</h3>
+              <p>
+                Обеспечение притока свежего воздуха, и вывод вредных газов из
+                помещения. Отвод технических газов, излишнего тепла и пара
+              </p>
             </s.KitchenCardRightText>
             <s.KitchenCardRightImg
               src={fotoA}
@@ -31,18 +32,22 @@ export default function Kitchen() {
               height="100%"
             />
             <s.KitchenCardLeftText>
-              <h3>Conditioning</h3>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
+              <h3>Кондиционирование</h3>
+              <p>
+                Охлаждение (подогрев) воздуха как в бытовых так и
+                производствееных помещениях. Охлождение производственных
+                жидкостей, для обеспечения ТУ производства. Осушение воздуха.
+              </p>
             </s.KitchenCardLeftText>
           </s.KitchenCardLeft>
           <s.KitchenCardRight>
             <s.KitchenCardRightText>
-              <h3>Industhial</h3>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
+              <h3>Комбинированые системы вентиляции</h3>
+              <p>
+                Приточно вытяжные сис-мы с подготовкой подаваемого воздуха.
+                Сис-мы вентиляции предусматривающие перепады давления в
+                помещениях
+              </p>
             </s.KitchenCardRightText>
             <s.KitchenCardRightImg
               src={fotoA}
@@ -59,18 +64,20 @@ export default function Kitchen() {
               height="100%"
             />
             <s.KitchenCardLeftText>
-              <h3>Hospitl</h3>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
+              <h3>Асперация и пневмотранспорт</h3>
+              <p>
+                Обеспечение транспартировки сыпучих продуктов. Отвод образивов,
+                стружки из робочих зон
+              </p>
             </s.KitchenCardLeftText>
           </s.KitchenCardLeft>
           <s.KitchenCardRight>
             <s.KitchenCardRightText>
               <h3>Engeneering systems</h3>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
+              <p>
+                Отопление, водопровод, канализация. Системы автоматизации и
+                удалённого контроля
+              </p>
             </s.KitchenCardRightText>
             <s.KitchenCardRightImg
               src={fotoA}

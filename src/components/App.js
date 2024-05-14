@@ -1,21 +1,25 @@
-// import Header from "./Header/Header";
-// import Main from "./Main/Main";
-// import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
+import Main from "./Main/Main";
+import Projects from "components/Projects/Projects";
+import Services from "components/Services/Services";
+import Contacts from "components/Contacts/Contacts";
+import Footer from "./Footer/Footer";
 
-import { NavLink, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <nav>
-        <NavLink to="/">home</NavLink>
-        <NavLink to="/doogs">Peges</NavLink>
+        <Header />
       </nav>
-
       <Routes>
-        <Route path="/" element={<h2>home</h2>} />
-        <Route path="/doogs" element={<h2>Peges</h2>} />
+        <Route path="/" element={<Main />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
