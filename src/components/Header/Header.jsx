@@ -31,7 +31,6 @@ export default function Header() {
               <NavLink to="/contacts">Контакты</NavLink>
             </li>
           </s.NavList>
-          <div>kontakt</div>
         </s.HeaderBlock>
       </Container>
     </>
