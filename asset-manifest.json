@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/climate-systems/static/css/main.e6c13ad2.css",
-    "main.js": "/climate-systems/static/js/main.bccfb0c4.js",
+    "main.css": "/climate-systems/static/css/main.856f4cb2.css",
+    "main.js": "/climate-systems/static/js/main.e933aa9d.js",
     "static/js/453.122192bc.chunk.js": "/climate-systems/static/js/453.122192bc.chunk.js",
     "static/media/derevo_tuman_mgla_147791_1920x1080.jpg": "/climate-systems/static/media/derevo_tuman_mgla_147791_1920x1080.ef553e1da9770d39a7ad.jpg",
     "static/media/jXnrfr0M.jpg": "/climate-systems/static/media/jXnrfr0M.e759f84389607ccaacea.jpg",
@@ -10,12 +10,12 @@
     "static/media/H3kFnC4y.jpg": "/climate-systems/static/media/H3kFnC4y.b4cba1d23aac1b491f47.jpg",
     "static/media/logo.png": "/climate-systems/static/media/logo.72ac7b2e3a6df503d499.png",
     "index.html": "/climate-systems/index.html",
-    "main.e6c13ad2.css.map": "/climate-systems/static/css/main.e6c13ad2.css.map",
-    "main.bccfb0c4.js.map": "/climate-systems/static/js/main.bccfb0c4.js.map",
+    "main.856f4cb2.css.map": "/climate-systems/static/css/main.856f4cb2.css.map",
+    "main.e933aa9d.js.map": "/climate-systems/static/js/main.e933aa9d.js.map",
     "453.122192bc.chunk.js.map": "/climate-systems/static/js/453.122192bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.bccfb0c4.js"
+    "static/css/main.856f4cb2.css",
+    "static/js/main.e933aa9d.js"
   ]
 }
