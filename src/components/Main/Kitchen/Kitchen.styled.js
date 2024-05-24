@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 export const KitchenConteiner = styled.div`
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 16px;
-  padding-bottom: 20px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // padding-top: 16px;
+  // padding-bottom: 20px;
   /* margin-left: auto; */
   /* margin-right: auto; */
-  background: aqua;
-  /* @media (min-width: 414px) {
+  // background: aqua;
+  @media (min-width: 414px) {
     width: 414px;
-  } */
+  }
   @media (min-width: 1024px) {
-    /* width: 940px; */
-    padding-left: 47px;
-    padding-right: 60px;
-    padding-top: 120px;
+    width: 940px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
     padding-bottom: 40px;
   }
   @media (min-width: 1280px) {
@@ -38,16 +38,6 @@ export const KitchenTitle = styled.h2`
     font-size: 64px;
   }
 `;
-export const KitchenText = styled.div`
-  font-family: "Times New Roman";
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.15;
-  color: black;
-  @media (min-width: 1024px) {
-    font-size: 32px;
-  }
-`;
 
 export const KitchenCards = styled.ul`
   list-style: none;
@@ -56,11 +46,13 @@ export const KitchenCards = styled.ul`
 `;
 
 export const KitchenCardRight = styled.li`
-  @media (min-width: 1024px) {
+  display: flex;
+  align-items: center;
+  /* @media (min-width: 1024px) {
     display: flex;
     align-items: center;
-    // margin-top: -240px;
-  }
+    margin-top: -240px;
+  } */
 `;
 
 export const KitchenCardRightText = styled.div`
@@ -70,7 +62,7 @@ export const KitchenCardRightText = styled.div`
   line-height: 1.25;
   letter-spacing: 0.02em;
   color: brown;
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     // margin-bottom: -110px;
     max-width: 440px;
     font-size: 16px;
@@ -79,7 +71,7 @@ export const KitchenCardRightText = styled.div`
     min-width: 518px;
     margin-right: 65px;
     // margin-top: -60px;
-  }
+  } */
 `;
 
 export const KitchenCardRightImg = styled.img`
@@ -94,7 +86,6 @@ export const KitchenCardRightImg = styled.img`
     max-width: 400px;
     width: 400px;
     margin-top: 0px;
-    z-index: 2;
   }
   @media (min-width: 1280px) {
     max-width: 460px;
@@ -105,7 +96,7 @@ export const KitchenCardRightImg = styled.img`
 export const KitchenCardLeft = styled.li`
   display: flex;
   align-items: center;
-  @media (max-width: 355px) {
+  /* @media (max-width: 355px) {
     flex-wrap: wrap;
   }
   @media (min-width: 1024px) {
@@ -113,7 +104,7 @@ export const KitchenCardLeft = styled.li`
   }
   @media (min-width: 1280px) {
     // margin-top: -100px;
-  }
+  } */
 `;
 
 export const KitchenCardLeftImg = styled.img`
