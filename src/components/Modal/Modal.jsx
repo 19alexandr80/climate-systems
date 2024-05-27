@@ -1,11 +1,14 @@
 import { createPortal } from "react-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import * as s from "./Modal.styled";
 
 const ModalRoot = document.getElementById("modal-root");
 
 export default function Modal({ onClose }) {
+  const [name, setName] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [comment, setComment] = useState("");
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Escape") {
@@ -23,15 +26,82 @@ export default function Modal({ onClose }) {
       onClose();
     }
   };
+  const onCh = (e) => {
+    switch (e.currentTarget.name) {
+      case "name":
+        setName(e.currentTarget.value);
+        break;
+      case "telephone":
+        setTelephone(e.currentTarget.value);
+        break;
+      case "comment":
+        setComment(e.currentTarget.value);
+        break;
+
+      default:
+        break;
+    }
+  };
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    const data = {
+      name: name,
+      telephone: telephone,
+      comment: comment,
+    };
+    setName("");
+    setTelephone("");
+    setComment("");
+    console.log(data);
+  };
   return createPortal(
     <>
       <s.ModalBack onClick={handleBackdropClick}>
         <s.ModalCont>
           <s.CloseButton onClick={onClose}>
-            <s.IconBtn />
+            {/* <s.IconBtn /> */}
+            <svg version="1" viewBox="0 0 48 48">
+              <g fill="black">
+                <polygon points="5,18 19,6.3 19,29.7" />
+                <path d="M28,14H16v8h12c2.8,0,5,2.2,5,5s-2.2,5-5,5h-3v8h3c7.2,0,13-5.8,13-13S35.2,14,28,14z" />
+              </g>
+            </svg>
           </s.CloseButton>
-          <h1>Наши проэкты</h1>
-          <p>И чего мы только не делали</p>
+          <h1>Оставте заявку и мы Вам перезвоним</h1>
+          <s.ModalForm>
+            <label>
+              name
+              <input
+                onChange={onCh}
+                type="text"
+                name="name"
+                value={name}
+                placeholder="Name"
+              ></input>
+            </label>
+            <label>
+              telefon
+              <input
+                onChange={onCh}
+                type="tel"
+                name="telephone"
+                value={telephone}
+                placeholder="+380..."
+              ></input>
+            </label>
+            <label>
+              comment
+              <input
+                onChange={onCh}
+                type="text"
+                name="comment"
+                value={comment}
+                placeholder="Enter text"
+                width={"100%"}
+              ></input>
+            </label>
+            <button onClick={onSubmitForm}>Отправить</button>
+          </s.ModalForm>
         </s.ModalCont>
       </s.ModalBack>
     </>,

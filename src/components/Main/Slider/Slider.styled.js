@@ -43,8 +43,6 @@ export const SlideImg = styled.img`
 export const ArrowBlock = styled.div`
   display: flex;
   justify-content: space-between;
-  z-index: 2;
   transform: translateY(-250px);
   width: 100%;
-  margin-bottom: -50px;
 `;

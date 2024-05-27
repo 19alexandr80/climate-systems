@@ -59,6 +59,11 @@ export const CloseButton = styled.button`
 export const IconBtn = styled(FcUndo)`
   width: 100%;
   height: 100%;
-
+  fill: black;
   color: black;
+`;
+export const ModalForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;

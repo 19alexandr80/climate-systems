@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { FcNext, FcPrevious } from "react-icons/fc";
+// import { FcNext, FcPrevious } from "react-icons/fc";
 
 import fotoA from "images/slaider/vent.webp";
 import fotoB from "images/slaider/HE9lk19c.jpg";
 import fotoC from "images/slaider/derevo_tuman_mgla_147791_1920x1080.jpg";
 import fotoD from "images/slaider/j6ZFSqEW.jpg";
 import fotoE from "images/slaider/jXnrfr0M.jpg";
+import next from "images/next.svg";
+import previous from "images/previous.svg";
 
 import * as s from "./Slider.styled";
 
@@ -63,10 +65,12 @@ export default function Slider() {
         </s.SliderList>
         <s.ArrowBlock>
           <div onClick={() => up(-1)}>
-            <FcPrevious size={50} fill="green" />
+            {/* <FcPrevious size={50} fill="green" /> */}
+            <img src={previous} width={50} height={50} alt="iconSlider" />
           </div>
           <div onClick={() => up(1)}>
-            <FcNext size={50} />
+            {/* <FcNext size={50} /> */}
+            <img src={next} width={50} height={50} alt="iconSlider" />
           </div>
         </s.ArrowBlock>
       </s.Carusel>
