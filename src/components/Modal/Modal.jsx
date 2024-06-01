@@ -87,18 +87,12 @@ export default function Modal({ onClose }) {
                 name="telephone"
                 value={telephone}
                 placeholder="+380..."
+                required
               ></input>
             </label>
             <label>
-              comment
-              <input
-                onChange={onCh}
-                type="text"
-                name="comment"
-                value={comment}
-                placeholder="Enter text"
-                width={"100%"}
-              ></input>
+              message
+              <textarea name="message" cols={30} rows={15}></textarea>
             </label>
             <button onClick={onSubmitForm}>Отправить</button>
           </s.ModalForm>

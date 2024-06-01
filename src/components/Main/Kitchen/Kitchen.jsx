@@ -6,7 +6,7 @@ import fotoA from "../../../images/slaider/H3kFnC4y.jpg";
 export default function Kitchen() {
   return (
     <>
-      <s.KitchenTitle>What are we doing</s.KitchenTitle>
+      <s.KitchenTitle>modern technologies for inner harmony</s.KitchenTitle>
       <s.KitchenCards>
         <s.KitchenCardRight>
           <s.KitchenCardRightText>

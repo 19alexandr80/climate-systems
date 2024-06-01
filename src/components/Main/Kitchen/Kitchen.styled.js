@@ -31,11 +31,11 @@ export const KitchenTitle = styled.h2`
   font-family: Film P3, "sans-serif";
   font-weight: 700;
   font-size: 40px;
-  line-height: 43px;
+  text-align: center;
   letter-spacing: 0.3em;
   color: grey;
   @media (min-width: 1024px) {
-    font-size: 64px;
+    font-size: 54px;
   }
 `;
 
