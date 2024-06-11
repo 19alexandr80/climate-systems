@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 // import { FcNext, FcPrevious } from "react-icons/fc";
 
-import fotoA from "images/slaider/vent.webp";
-import fotoB from "images/slaider/HE9lk19c.jpg";
-import fotoC from "images/slaider/derevo_tuman_mgla_147791_1920x1080.jpg";
-import fotoD from "images/slaider/j6ZFSqEW.jpg";
-import fotoE from "images/slaider/jXnrfr0M.jpg";
+import fotoA from "images/ventilation/Screenshot_2.png";
+import fotoB from "images/ventilation/Screenshot_3.png";
+import fotoC from "images/ventilation/Screenshot_4.png";
+import fotoD from "images/ventilation/Screenshot_5.png";
+import fotoE from "images/ventilation/Screenshot_6.png";
+import fotoF from "images/ventilation/Screenshot_7.png";
+import fotoG from "images/ventilation/Screenshot_8.png";
+import fotoH from "images/ventilation/Screenshot_9.png";
+import fotoJ from "images/ventilation/Screenshot_10.png";
+import fotoK from "images/ventilation/Screenshot_11.png";
+import fotoL from "images/ventilation/Screenshot_12.png";
+import fotoM from "images/ventilation/Screenshot_13.png";
+import fotoN from "images/ventilation/Screenshot_14.png";
 import next from "images/next.svg";
 import previous from "images/previous.svg";
 
@@ -17,6 +25,14 @@ const dataSlide = [
   { foto: fotoC, id: "3" },
   { foto: fotoD, id: "4" },
   { foto: fotoE, id: "5" },
+  { foto: fotoF, id: "6" },
+  { foto: fotoG, id: "7" },
+  { foto: fotoH, id: "8" },
+  { foto: fotoJ, id: "9" },
+  { foto: fotoK, id: "10" },
+  { foto: fotoL, id: "11" },
+  { foto: fotoM, id: "12" },
+  { foto: fotoN, id: "13" },
 ];
 
 export default function Slider() {
