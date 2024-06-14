@@ -14,10 +14,23 @@ import fotoK from "images/ventilation/Screenshot_11.png";
 import fotoL from "images/ventilation/Screenshot_12.png";
 import fotoM from "images/ventilation/Screenshot_13.png";
 import fotoN from "images/ventilation/Screenshot_14.png";
+import fotoO from "images/ventilation/Screenshot_15.png";
+import fotoP from "images/ventilation/Screenshot_16.png";
+import fotoR from "images/ventilation/Screenshot_17.png";
+import fotoS from "images/ventilation/Screenshot_18.png";
+import fotoT from "images/ventilation/Screenshot_19.png";
+import fotoY from "images/ventilation/Screenshot_20.png";
+import fotoI from "images/ventilation/Screenshot_21.png";
+import fotoX from "images/ventilation/Screenshot_22.png";
+import fotoQ from "images/ventilation/Screenshot_23.png";
+import fotoU from "images/ventilation/Screenshot_24.png";
+import fotoV from "images/ventilation/Screenshot_25.png";
 import next from "images/next.svg";
 import previous from "images/previous.svg";
 
 import * as s from "./Slider.styled";
+
+// import * as slids from "images/ventilation";
 
 const dataSlide = [
   { foto: fotoA, id: "1" },
@@ -33,11 +46,23 @@ const dataSlide = [
   { foto: fotoL, id: "11" },
   { foto: fotoM, id: "12" },
   { foto: fotoN, id: "13" },
+  { foto: fotoO, id: "14" },
+  { foto: fotoP, id: "15" },
+  { foto: fotoR, id: "16" },
+  { foto: fotoS, id: "17" },
+  { foto: fotoT, id: "18" },
+  { foto: fotoY, id: "19" },
+  { foto: fotoI, id: "20" },
+  { foto: fotoX, id: "21" },
+  { foto: fotoQ, id: "22" },
+  { foto: fotoU, id: "23" },
+  { foto: fotoV, id: "24" },
 ];
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [focus, setFocus] = useState(false);
+  // console.log(slids);
 
   function up(x) {
     if (slideIndex + x === -1) {
@@ -81,11 +106,9 @@ export default function Slider() {
         </s.SliderList>
         <s.ArrowBlock>
           <div onClick={() => up(-1)}>
-            {/* <FcPrevious size={50} fill="green" /> */}
             <img src={previous} width={50} height={50} alt="iconSlider" />
           </div>
           <div onClick={() => up(1)}>
-            {/* <FcNext size={50} /> */}
             <img src={next} width={50} height={50} alt="iconSlider" />
           </div>
         </s.ArrowBlock>
