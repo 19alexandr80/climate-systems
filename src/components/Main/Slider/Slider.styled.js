@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Carusel = styled.div`
-  /* overflow-x: clip; */
   width: 100%;
   /*@media (max-width: 355px) {
     max-width: 315px;
@@ -22,7 +21,7 @@ export const SliderList = styled.div`
 export const Slide = styled.div`
   min-width: 100%;
   max-width: 100%;
-  height: 450px;
+  height: 530px;
   /* @media (min-width: 1024px) {
     margin-right: 40px;
   } */
