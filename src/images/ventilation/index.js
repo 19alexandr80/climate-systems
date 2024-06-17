@@ -30,6 +30,22 @@ import fotoWC from "images/ventilation/Screenshot_30.png";
 import fotoWD from "images/ventilation/Screenshot_31.png";
 import fotoWI from "images/ventilation/Screenshot_32.png";
 import fotoWF from "images/ventilation/Screenshot_33.png";
+import fotoWG from "images/ventilation/Screenshot_34.png";
+import fotoWH from "images/ventilation/Screenshot_35.png";
+import fotoWJ from "images/ventilation/Screenshot_36.png";
+import fotoWK from "images/ventilation/Screenshot_37.png";
+import fotoWL from "images/ventilation/Screenshot_38.png";
+import fotoWM from "images/ventilation/Screenshot_39.png";
+import fotoWN from "images/ventilation/Screenshot_40.png";
+import fotoWO from "images/ventilation/Screenshot_41.png";
+import fotoWP from "images/ventilation/Screenshot_42.png";
+import fotoWR from "images/ventilation/Screenshot_43.png";
+import fotoWS from "images/ventilation/Screenshot_44.png";
+import fotoWT from "images/ventilation/Screenshot_45.png";
+import fotoWY from "images/ventilation/Screenshot_46.png";
+import fotoWX from "images/ventilation/Screenshot_47.png";
+import fotoWQ from "images/ventilation/Screenshot_48.png";
+import fotoWU from "images/ventilation/Screenshot_49.png";
 
 export const slidersFoto = [
   fotoA,
@@ -64,4 +80,20 @@ export const slidersFoto = [
   fotoWD,
   fotoWI,
   fotoWF,
+  fotoWG,
+  fotoWH,
+  fotoWJ,
+  fotoWK,
+  fotoWL,
+  fotoWM,
+  fotoWN,
+  fotoWO,
+  fotoWP,
+  fotoWR,
+  fotoWS,
+  fotoWT,
+  fotoWY,
+  fotoWX,
+  fotoWQ,
+  fotoWU,
 ];
