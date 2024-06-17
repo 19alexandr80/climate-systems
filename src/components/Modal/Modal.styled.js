@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FcUndo } from "react-icons/fc";
 
-import fotoA from "images/ventilation/Screenshot_25.png";
+import fotoWU from "images/ventilation/Screenshot_49.png";
 
 export const ModalBack = styled.div`
   position: fixed;
@@ -17,7 +17,7 @@ export const ModalBack = styled.div`
   /* z-index: 1200; */
 
   /* background-color: green; */
-  background-image: url(${fotoA});
+  background-image: url(${fotoWU});
   background-position: center;
   background-size: cover;
 `;
