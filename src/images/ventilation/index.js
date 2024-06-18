@@ -46,6 +46,8 @@ import fotoWY from "images/ventilation/Screenshot_46.png";
 import fotoWX from "images/ventilation/Screenshot_47.png";
 import fotoWQ from "images/ventilation/Screenshot_48.png";
 import fotoWU from "images/ventilation/Screenshot_49.png";
+import fotoWZ from "images/ventilation/Screenshot_50.png";
+import fotoWE from "images/ventilation/Screenshot_51.png";
 
 export const slidersFoto = [
   fotoA,
@@ -96,4 +98,6 @@ export const slidersFoto = [
   fotoWX,
   fotoWQ,
   fotoWU,
+  fotoWZ,
+  fotoWE,
 ];
