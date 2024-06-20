@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const HeaderBlock = styled.div`
+export const HeaderBlock = styled.nav`
   background-color: gray;
 `;
-
 export const HeadBl = styled.div`
   display: flex;
   justify-content: space-between;
@@ -23,6 +22,17 @@ export const NavList = styled.ul`
   padding: 0;
   margin: 0;
   gap: 20px;
+  @media (max-width: 1024px) {
+    display: ${(props) => (props.clicked ? "bloc" : "none")};
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    background-color: gray;
+    transform: translate(190px, 0%);
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 10;
+  }
 `;
 export const LinkStyle = styled(NavLink)`
   text-decoration: none;
@@ -53,5 +63,48 @@ export const ButtonFit = styled.button`
   }
   &:focus {
     background: #2dc4ff;
+  }
+`;
+export const ImgIcon = styled.img`
+  width: 100px;
+  height: 100px;
+  @media (max-width: 1024px) {
+    width: 50px;
+    height: 50px;
+  }
+`;
+export const BurgerIcon = styled.div`
+  display: none;
+  padding-bottom: 15px;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+`;
+export const Icon = styled.span`
+  position: relative;
+  background-color: ${(props) => (props.clicked ? "transparent" : "black")};
+  width: 3rem;
+  height: 2px;
+  display: inline-block;
+  /* margin-top: 3.5rem; */
+  transition: all 0.3s;
+  &::before,
+  &::after {
+    content: "";
+    background-color: black;
+    width: 3rem;
+    height: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+  }
+  &::before {
+    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
+    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+  }
+  &::after {
+    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
+    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 `;
