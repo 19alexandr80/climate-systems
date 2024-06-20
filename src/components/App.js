@@ -24,9 +24,7 @@ function App() {
   };
   return (
     <>
-      <nav>
-        <Header onOpen={onOpen} />
-      </nav>
+      <Header onOpen={onOpen} />
       <main>
         <Routes>
           <Route path="/" element={<Main />} />

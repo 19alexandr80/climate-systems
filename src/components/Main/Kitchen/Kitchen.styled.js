@@ -34,8 +34,8 @@ export const KitchenTitle = styled.h2`
   text-align: center;
   letter-spacing: 0.3em;
   color: grey;
-  @media (min-width: 1024px) {
-    font-size: 54px;
+  @media (max-width: 1024px) {
+    font-size: 24px;
   }
 `;
 
@@ -48,11 +48,9 @@ export const KitchenCards = styled.ul`
 export const KitchenCardRight = styled.li`
   display: flex;
   align-items: center;
-  /* @media (min-width: 1024px) {
-    display: flex;
-    align-items: center;
-    margin-top: -240px;
-  } */
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const KitchenCardRightText = styled.div`
@@ -96,15 +94,9 @@ export const KitchenCardRightImg = styled.img`
 export const KitchenCardLeft = styled.li`
   display: flex;
   align-items: center;
-  /* @media (max-width: 355px) {
-    flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    flex-direction: column;
   }
-  @media (min-width: 1024px) {
-    // margin-top: -60px;
-  }
-  @media (min-width: 1280px) {
-    // margin-top: -100px;
-  } */
 `;
 
 export const KitchenCardLeftImg = styled.img`

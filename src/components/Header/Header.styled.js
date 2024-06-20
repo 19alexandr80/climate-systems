@@ -22,16 +22,17 @@ export const NavList = styled.ul`
   padding: 0;
   margin: 0;
   gap: 20px;
+
   @media (max-width: 1024px) {
-    display: ${(props) => (props.clicked ? "flex" : "none")};
     flex-direction: column;
     position: absolute;
     top: 90px;
     background-color: gray;
-    transform: translate(190px, 0%);
+    transform: translate(134px, ${(props) => (props.clicked ? "0%" : "-150%")});
     padding: 30px;
     border-radius: 20px;
     z-index: 10;
+    transition: all 0.3s;
   }
 `;
 export const LinkStyle = styled(NavLink)`
