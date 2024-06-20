@@ -28,7 +28,7 @@ export const NavList = styled.ul`
     position: absolute;
     top: 90px;
     background-color: gray;
-    transform: translate(134px, ${(props) => (props.clicked ? "0%" : "-150%")});
+    transform: translate(104px, ${(props) => (props.clicked ? "0%" : "-150%")});
     padding: 30px;
     border-radius: 20px;
     z-index: 10;
