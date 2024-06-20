@@ -23,7 +23,7 @@ export const NavList = styled.ul`
   margin: 0;
   gap: 20px;
   @media (max-width: 1024px) {
-    display: ${(props) => (props.clicked ? "bloc" : "none")};
+    display: ${(props) => (props.clicked ? "flex" : "none")};
     flex-direction: column;
     position: absolute;
     top: 90px;

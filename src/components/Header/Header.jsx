@@ -25,7 +25,7 @@ export default function Header({ onOpen }) {
             <s.BurgerIcon onClick={onColor}>
               <s.Icon clicked={colorBack}></s.Icon>
             </s.BurgerIcon>
-            <s.NavList clicked={colorBack}>
+            <s.NavList clicked={colorBack} onClick={onColor}>
               <li>
                 <s.LinkStyle to="/">Главная</s.LinkStyle>
               </li>
