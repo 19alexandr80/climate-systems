@@ -30,7 +30,9 @@ export default function Footer({ onOpen }) {
                 <li>imail</li>
               </s.FooterContackt>
             </div>
-            <ButtonFitback onOpen={onOpen} />
+            <s.DivFit>
+              <ButtonFitback onOpen={onOpen} />
+            </s.DivFit>
           </s.FooterBl>
         </Container>
       </s.FooterBlock>

@@ -21,4 +21,12 @@ export const FooterContackt = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+`;
+export const DivFit = styled.div`
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
