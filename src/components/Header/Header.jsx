@@ -4,6 +4,7 @@ import { useState } from "react";
 import logo from "../../images/logo/logo.png";
 
 import { Container } from "components/stylesheet/Container.styled";
+import ButtonFitback from "components/ButtonFit/ButtonFit";
 import * as s from "./Header.styled";
 
 export default function Header({ onOpen }) {
@@ -39,7 +40,7 @@ export default function Header({ onOpen }) {
                 <s.LinkStyle to="/contacts">Контакты</s.LinkStyle>
               </li>
               <li>
-                <s.ButtonFit onClick={onOpen}>Обратная связь</s.ButtonFit>
+                <ButtonFitback onOpen={onOpen} />
               </li>
             </s.NavList>
           </s.HeadBl>

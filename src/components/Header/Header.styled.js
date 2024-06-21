@@ -51,22 +51,6 @@ export const LinkStyle = styled(NavLink)`
   }
 `;
 
-export const ButtonFit = styled.button`
-  width: 120px;
-  font-size: 24px;
-  font-family: Film P3, "sans-serif";
-  cursor: pointer;
-  background-color: #2d59ff;
-  border-radius: 12px;
-  border-width: 5px;
-  background-color: #4c4c71;
-  &:hover {
-    background: #2dc4ff;
-  }
-  &:focus {
-    background: #2dc4ff;
-  }
-`;
 export const ImgIcon = styled.img`
   width: 100px;
   height: 100px;

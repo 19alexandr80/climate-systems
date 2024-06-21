@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 import { Container } from "../stylesheet/Container.styled";
 import * as s from "components/Footer/Footer.styled";
-import { ButtonFit, ImgIcon } from "components/Header/Header.styled";
+import { ImgIcon } from "components/Header/Header.styled";
+import ButtonFitback from "components/ButtonFit/ButtonFit";
 
 import logo from "../../images/logo/logo.png";
 
@@ -29,7 +30,7 @@ export default function Footer({ onOpen }) {
                 <li>imail</li>
               </s.FooterContackt>
             </div>
-            <ButtonFit onClick={onOpen}>Обратная связь</ButtonFit>
+            <ButtonFitback onOpen={onOpen} />
           </s.FooterBl>
         </Container>
       </s.FooterBlock>
