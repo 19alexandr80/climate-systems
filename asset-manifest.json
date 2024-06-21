@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/climate-systems/static/css/main.3076ec6b.css",
-    "main.js": "/climate-systems/static/js/main.0744581a.js",
+    "main.js": "/climate-systems/static/js/main.c98fe8c1.js",
     "static/js/453.fdee4367.chunk.js": "/climate-systems/static/js/453.fdee4367.chunk.js",
     "static/media/Screenshot_44.png": "/climate-systems/static/media/Screenshot_44.1b0b35776fda559a1dfc.png",
     "static/media/Screenshot_11.png": "/climate-systems/static/media/Screenshot_11.b7ab94e93c9cd57e0264.png",
+    "static/media/Screenshot_53.png": "/climate-systems/static/media/Screenshot_53.6589810a72b1b9b376d6.png",
     "static/media/Screenshot_19.png": "/climate-systems/static/media/Screenshot_19.0e2bbdca9f7b2b92a9b7.png",
     "static/media/Screenshot_49.png": "/climate-systems/static/media/Screenshot_49.93601f127b13b0f3f10e.png",
     "static/media/Screenshot_34.png": "/climate-systems/static/media/Screenshot_34.a86d7638731cd073d30c.png",
@@ -23,6 +24,8 @@
     "static/media/Screenshot_9.png": "/climate-systems/static/media/Screenshot_9.b1bdfcefaf6978cf267f.png",
     "static/media/Screenshot_14.png": "/climate-systems/static/media/Screenshot_14.afb8a214f6b14fdcd3b1.png",
     "static/media/Screenshot_20.png": "/climate-systems/static/media/Screenshot_20.d593cfc57c02e68a0a5d.png",
+    "static/media/Screenshot_56.png": "/climate-systems/static/media/Screenshot_56.04eea442adbae400264a.png",
+    "static/media/Screenshot_52.png": "/climate-systems/static/media/Screenshot_52.d5c82082a10132f1921d.png",
     "static/media/Screenshot_15.png": "/climate-systems/static/media/Screenshot_15.d04b677ec26173b0c83f.png",
     "static/media/Screenshot_4.png": "/climate-systems/static/media/Screenshot_4.54d57c00de427c4bd9f9.png",
     "static/media/Screenshot_10.png": "/climate-systems/static/media/Screenshot_10.a6e6691113c95d72aaf5.png",
@@ -37,9 +40,11 @@
     "static/media/Screenshot_22.png": "/climate-systems/static/media/Screenshot_22.2dc1651586c845e10c5f.png",
     "static/media/Screenshot_27.png": "/climate-systems/static/media/Screenshot_27.c36014cce61a4d3008d4.png",
     "static/media/Screenshot_13.png": "/climate-systems/static/media/Screenshot_13.d993664dbb28ffc367e3.png",
+    "static/media/Screenshot_54.png": "/climate-systems/static/media/Screenshot_54.a422f10b8c305e1dfe02.png",
     "static/media/Screenshot_36.png": "/climate-systems/static/media/Screenshot_36.a15ca00efabce7b99c80.png",
     "static/media/Screenshot_23.png": "/climate-systems/static/media/Screenshot_23.31940d78550607aad657.png",
     "static/media/Screenshot_30.png": "/climate-systems/static/media/Screenshot_30.5dcf63f8dec3866f3f35.png",
+    "static/media/Screenshot_55.png": "/climate-systems/static/media/Screenshot_55.78b2cb4be3c3d0d174d3.png",
     "static/media/Screenshot_24.png": "/climate-systems/static/media/Screenshot_24.65a7f82ae1960932f565.png",
     "static/media/Screenshot_43.png": "/climate-systems/static/media/Screenshot_43.d7733167ecda1f26c37c.png",
     "static/media/Screenshot_3.png": "/climate-systems/static/media/Screenshot_3.a1fea218c74cd76b3ab3.png",
@@ -53,17 +58,16 @@
     "static/media/Screenshot_33.png": "/climate-systems/static/media/Screenshot_33.96d09cd06940aa5297e6.png",
     "static/media/Screenshot_6.png": "/climate-systems/static/media/Screenshot_6.8aad4ae08959385c7158.png",
     "static/media/Screenshot_35.png": "/climate-systems/static/media/Screenshot_35.a60208282659cd0e04a8.png",
-    "static/media/H3kFnC4y.jpg": "/climate-systems/static/media/H3kFnC4y.b4cba1d23aac1b491f47.jpg",
     "static/media/logo.png": "/climate-systems/static/media/logo.0e7c15e79bb43e3d25c3.png",
     "index.html": "/climate-systems/index.html",
     "static/media/next.svg": "/climate-systems/static/media/next.08f9983f145bdc52c5c1f203f38148da.svg",
     "static/media/previous.svg": "/climate-systems/static/media/previous.a6ccc15117ea296c5c1c8d2094215a40.svg",
     "main.3076ec6b.css.map": "/climate-systems/static/css/main.3076ec6b.css.map",
-    "main.0744581a.js.map": "/climate-systems/static/js/main.0744581a.js.map",
+    "main.c98fe8c1.js.map": "/climate-systems/static/js/main.c98fe8c1.js.map",
     "453.fdee4367.chunk.js.map": "/climate-systems/static/js/453.fdee4367.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3076ec6b.css",
-    "static/js/main.0744581a.js"
+    "static/js/main.c98fe8c1.js"
   ]
 }
