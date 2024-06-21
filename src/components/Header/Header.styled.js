@@ -31,7 +31,7 @@ export const NavList = styled.ul`
       104px,
       ${(props) => (props.clicked ? "65%" : "-150%")}
     );
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     z-index: 10;
     transition: all 0.3s;

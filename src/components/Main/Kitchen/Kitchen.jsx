@@ -1,7 +1,5 @@
 import * as s from "./Kitchen.styled";
 
-// import fotoA from "../../../images/slaider/H3kFnC4y.jpg";
-// import { Container } from "components/stylesheet/Container.styled";
 import fotoA from "images/ventilation/Screenshot_52.png";
 import fotoB from "images/ventilation/Screenshot_53.png";
 import fotoC from "images/ventilation/Screenshot_54.png";
