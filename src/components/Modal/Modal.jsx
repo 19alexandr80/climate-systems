@@ -67,7 +67,7 @@ export default function Modal({ onClose }) {
               </g>
             </svg>
           </s.CloseButton>
-          <h1>Оставте заявку и мы Вам перезвоним</h1>
+          <h2>Оставте заявку и мы Вам перезвоним</h2>
           <s.ModalForm>
             <label>
               name

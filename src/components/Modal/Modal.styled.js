@@ -9,30 +9,21 @@ export const ModalBack = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* z-index: 1200; */
-
-  /* background-color: green; */
   background-image: url(${fotoWU});
   background-position: center;
   background-size: cover;
 `;
-
 export const ModalCont = styled.div`
   position: relative;
-  width: 335px;
+  width: 305px;
   min-height: 155px;
-  padding: 20px;
-
+  padding: 50px;
   border-radius: 8px;
-
   background-color: gainsboro;
   opacity: 0.7;
-
   @media screen and (min-width: 768px) {
     width: 468px;
     padding: 35px;
@@ -42,21 +33,15 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 24px;
   right: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 40px;
   height: 40px;
-
   padding: 0;
-
   cursor: pointer;
   border: none;
-
   background-color: transparent;
-
   @media screen and (min-width: 768px) {
     top: 18px;
     right: 18px;
