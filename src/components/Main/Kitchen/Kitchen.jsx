@@ -1,7 +1,12 @@
 import * as s from "./Kitchen.styled";
 
-import fotoA from "../../../images/slaider/H3kFnC4y.jpg";
+// import fotoA from "../../../images/slaider/H3kFnC4y.jpg";
 // import { Container } from "components/stylesheet/Container.styled";
+import fotoA from "images/ventilation/Screenshot_52.png";
+import fotoB from "images/ventilation/Screenshot_53.png";
+import fotoC from "images/ventilation/Screenshot_54.png";
+import fotoD from "images/ventilation/Screenshot_55.png";
+import fotoE from "images/ventilation/Screenshot_56.png";
 
 export default function Kitchen() {
   return (
@@ -25,7 +30,7 @@ export default function Kitchen() {
         </s.KitchenCardRight>
         <s.KitchenCardLeft>
           <s.KitchenCardLeftImg
-            src={fotoA}
+            src={fotoB}
             alt="icon"
             width="100%"
             height="100%"
@@ -48,7 +53,7 @@ export default function Kitchen() {
             </p>
           </s.KitchenCardRightText>
           <s.KitchenCardRightImg
-            src={fotoA}
+            src={fotoC}
             alt="icon"
             width="100%"
             height="100%"
@@ -56,7 +61,7 @@ export default function Kitchen() {
         </s.KitchenCardRight>
         <s.KitchenCardLeft>
           <s.KitchenCardLeftImg
-            src={fotoA}
+            src={fotoD}
             alt="icon"
             width="100%"
             height="100%"
@@ -78,7 +83,7 @@ export default function Kitchen() {
             </p>
           </s.KitchenCardRightText>
           <s.KitchenCardRightImg
-            src={fotoA}
+            src={fotoE}
             alt="icon"
             width="100%"
             height="100%"

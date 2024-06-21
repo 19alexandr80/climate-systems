@@ -11,19 +11,17 @@ export const ButtonStyle = styled.button`
 export const SpanStyle = styled.span`
   font-family: Film P3, "sans-serif";
   font-size: 20px;
-  width: 140px;
+  width: 120px;
   height: auto;
   float: left;
   transition: 0.5s linear;
   position: relative;
   display: block;
   overflow: hidden;
-  padding: 12px;
+  padding: 8px;
   text-align: center;
   margin: 0 5px;
   background: transparent;
-  /* text-transform: uppercase; */
-  /* font-weight: 600; */
   &:before {
     position: absolute;
     content: "";
