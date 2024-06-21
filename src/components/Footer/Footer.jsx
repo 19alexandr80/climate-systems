@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { Container } from "../stylesheet/Container.styled";
 import * as s from "components/Footer/Footer.styled";
-import { ButtonFit } from "components/Header/Header.styled";
+import { ButtonFit, ImgIcon } from "components/Header/Header.styled";
 
 import logo from "../../images/logo/logo.png";
 
@@ -13,7 +13,7 @@ export default function Footer({ onOpen }) {
         <Container>
           <s.FooterBl>
             <Link to={"/"}>
-              <img
+              <ImgIcon
                 className="fit-picture"
                 src={logo}
                 alt="icon"

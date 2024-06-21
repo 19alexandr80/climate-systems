@@ -2,15 +2,6 @@ import styled from "styled-components";
 
 export const Carusel = styled.div`
   width: 100%;
-  /*@media (max-width: 355px) {
-    max-width: 315px;
-  }
-  @media (min-width: 1024px) {
-    padding-left: 18px;
-  }
-  @media (min-width: 1280px) {
-    padding-left: 18px;
-  } */
 `;
 
 export const SliderList = styled.div`
@@ -36,13 +27,8 @@ export const SlideImg = styled.img`
   border-radius: 2px;
   box-shadow: 2px 2px 15px 4px rgb(0 0 0 / 25%);
   @media (max-width: 1024px) {
-    /* width: 194px; */
     object-fit: cover;
   }
-  /* @media (min-width: 1280px) {
-    max-width: 254px;
-    width: 254px;
-  } */
 `;
 export const ArrowBlock = styled.div`
   display: flex;

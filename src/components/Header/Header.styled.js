@@ -26,7 +26,6 @@ export const NavList = styled.ul`
   @media (max-width: 1024px) {
     flex-direction: column;
     position: absolute;
-    /* top: 90px; */
     background-color: gray;
     transform: translate(
       104px,
@@ -49,7 +48,6 @@ export const LinkStyle = styled(NavLink)`
   }
   &:hover {
     border-bottom: 3px #2dc4ff solid;
-    // background: #2dc4ff;
   }
 `;
 
@@ -90,7 +88,6 @@ export const Icon = styled.span`
   width: 3rem;
   height: 2px;
   display: inline-block;
-  /* margin-top: 3.5rem; */
   transition: all 0.3s;
   &::before,
   &::after {
