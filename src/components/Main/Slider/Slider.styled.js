@@ -22,19 +22,20 @@ export const Slide = styled.div`
   min-width: 100%;
   max-width: 100%;
   height: 530px;
-  /* @media (min-width: 1024px) {
-    margin-right: 40px;
-  } */
+  @media (max-width: 1024px) {
+    height: 400px;
+  }
 `;
 export const SlideImg = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 2px;
   box-shadow: 2px 2px 15px 4px rgb(0 0 0 / 25%);
-  /* @media (min-width: 1024px) {
-    width: 194px;
+  @media (max-width: 1024px) {
+    /* width: 194px; */
+    object-fit: cover;
   }
-  @media (min-width: 1280px) {
+  /* @media (min-width: 1280px) {
     max-width: 254px;
     width: 254px;
   } */
