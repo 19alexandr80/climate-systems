@@ -17,6 +17,10 @@ export const SliderList = styled.div`
   padding-left: 40px;
   padding-right: 40px;
   margin: 0px;
+  @media (max-width: 1024px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 `;
 export const Slide = styled.div`
   min-width: 100%;
