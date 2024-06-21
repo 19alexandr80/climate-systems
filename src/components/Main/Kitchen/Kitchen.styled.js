@@ -73,7 +73,7 @@ export const KitchenCardRightText = styled.div`
 `;
 
 export const KitchenCardRightImg = styled.img`
-  width: 280px;
+  width: 200px;
   margin-left: auto;
   margin-top: 28px;
   margin-bottom: 32px;
