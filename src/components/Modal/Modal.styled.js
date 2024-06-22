@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FcUndo } from "react-icons/fc";
 
 import fotoWU from "images/ventilation/Screenshot_49.png";
 
@@ -47,12 +46,7 @@ export const CloseButton = styled.button`
     right: 18px;
   }
 `;
-export const IconBtn = styled(FcUndo)`
-  width: 100%;
-  height: 100%;
-  fill: black;
-  color: black;
-`;
+
 export const ModalForm = styled.form`
   display: flex;
   flex-direction: column;

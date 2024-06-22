@@ -36,3 +36,18 @@ export const ArrowBlock = styled.div`
   transform: translateY(-250px);
   width: 100%;
 `;
+export const Arrow = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  &:hover {
+    background-color: rgba(157, 157, 157, 0.5);
+  }
+  @media (max-width: 1024px) {
+    & {
+      filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(158deg)
+        brightness(108%) contrast(109%);
+    }
+    background-color: rgba(45, 196, 255, 0.5);
+  }
+`;

@@ -59,7 +59,6 @@ export default function Modal({ onClose }) {
       <s.ModalBack onClick={handleBackdropClick}>
         <s.ModalCont>
           <s.CloseButton onClick={onClose}>
-            {/* <s.IconBtn /> */}
             <svg version="1" viewBox="0 0 48 48">
               <g fill="black">
                 <polygon points="5,18 19,6.3 19,29.7" />

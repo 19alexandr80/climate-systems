@@ -52,10 +52,10 @@ export default function Slider() {
         </s.SliderList>
         <s.ArrowBlock>
           <div onClick={() => up(-1)}>
-            <img src={previous} width={50} height={50} alt="iconSlider" />
+            <s.Arrow src={previous} alt="iconSlider" />
           </div>
           <div onClick={() => up(1)}>
-            <img src={next} width={50} height={50} alt="iconSlider" />
+            <s.Arrow src={next} alt="iconSlider" />
           </div>
         </s.ArrowBlock>
       </s.Carusel>
