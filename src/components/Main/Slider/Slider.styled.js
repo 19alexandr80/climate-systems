@@ -36,8 +36,7 @@ export const ArrowBlock = styled.div`
   transform: translateY(-250px);
   width: 100%;
   @media (max-width: 1024px) {
-    width: 394px;
-    position: absolute;
+    margin-bottom: -54px;
   }
 `;
 export const Arrow = styled.img`
