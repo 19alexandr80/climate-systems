@@ -15,6 +15,8 @@ export const HeadBl = styled.div`
   @media (max-width: 1024px) {
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 `;
 
