@@ -12,6 +12,10 @@ export const HeadBl = styled.div`
   padding-right: 42px;
   padding-top: 16px;
   padding-bottom: 16px;
+  @media (max-width: 1024px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 `;
 
 export const NavList = styled.ul`

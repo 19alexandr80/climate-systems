@@ -35,6 +35,10 @@ export const ArrowBlock = styled.div`
   justify-content: space-between;
   transform: translateY(-250px);
   width: 100%;
+  @media (max-width: 1024px) {
+    width: 394px;
+    position: absolute;
+  }
 `;
 export const Arrow = styled.img`
   width: 50px;
