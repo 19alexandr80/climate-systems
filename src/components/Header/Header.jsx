@@ -39,6 +39,10 @@ export default function Header({ onOpen }) {
               <li>
                 <s.LinkStyle to="/contacts">Контакты</s.LinkStyle>
               </li>
+              <s.Register>
+                <button type="button">вход</button>
+                <button type="button">регистрация</button>
+              </s.Register>
               <li>
                 <ButtonFitback onOpen={onOpen} />
               </li>

@@ -99,3 +99,7 @@ export const Icon = styled.span`
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 `;
+export const Register = styled.li`
+  display: flex;
+  flex-direction: column;
+`;

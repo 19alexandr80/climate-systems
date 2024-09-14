@@ -1,12 +1,15 @@
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 
+import { addFeedback } from "api/api";
+
 import * as s from "./Modal.styled";
 
 const ModalRoot = document.getElementById("modal-root");
 
 export default function Modal({ onClose }) {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [comment, setComment] = useState("");
   useEffect(() => {
@@ -31,10 +34,13 @@ export default function Modal({ onClose }) {
       case "name":
         setName(e.currentTarget.value);
         break;
+      case "email":
+        setEmail(e.currentTarget.value);
+        break;
       case "telephone":
         setTelephone(e.currentTarget.value);
         break;
-      case "comment":
+      case "message":
         setComment(e.currentTarget.value);
         break;
 
@@ -46,13 +52,15 @@ export default function Modal({ onClose }) {
     e.preventDefault();
     const data = {
       name: name,
-      telephone: telephone,
-      comment: comment,
+      phone: telephone,
+      message: comment,
+      email: email,
     };
+    addFeedback(data);
     setName("");
     setTelephone("");
     setComment("");
-    console.log(data);
+    setEmail("");
   };
   return createPortal(
     <>
@@ -90,8 +98,24 @@ export default function Modal({ onClose }) {
               ></input>
             </label>
             <label>
+              email
+              <input
+                onChange={onCh}
+                type="email"
+                name="email"
+                value={email}
+                placeholder="...@..."
+              ></input>
+            </label>
+            <label>
               message
-              <textarea name="message" cols={30} rows={15}></textarea>
+              <textarea
+                name="message"
+                cols={30}
+                rows={15}
+                onChange={onCh}
+                value={comment}
+              ></textarea>
             </label>
             <button onClick={onSubmitForm}>Отправить</button>
           </s.ModalForm>
