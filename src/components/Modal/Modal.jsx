@@ -56,7 +56,9 @@ export default function Modal({ onClose }) {
       message: comment,
       email: email,
     };
+
     addFeedback(data);
+
     setName("");
     setTelephone("");
     setComment("");

@@ -15,4 +15,3 @@ root.render(
 );
 
 reportWebVitals();
-// https://github.com/19alexandr80/climate-systems.git

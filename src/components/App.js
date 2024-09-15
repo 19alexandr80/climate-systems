@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Projects from "components/Projects/Projects";
+import Admin from "components/Admin/Admin";
 import Services from "components/Services/Services";
 import Contacts from "components/Contacts/Contacts";
 import Footer from "./Footer/Footer";
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/services" element={<Services />}>
             <Route path="aircond" element={<Aircond />} />
             <Route path="ventilation" element={<Ventilation />} />
