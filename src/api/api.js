@@ -34,4 +34,23 @@ export const addFeedback = async (feedb) => {
   }
 };
 
+export const getAllFeedback = async () => {
+  try {
+    const response = await axios.get(`/feedback`);
+    return response.data;
+  } catch (error) {
+    console.error("errrrrror", error);
+  }
+};
+
+export const deleteFeedback = async (id) => {
+  try {
+    const response = await axios.delete(`/feedback/${id}`);
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error("errrrrror", error);
+  }
+};
+
 // export default getUsers;
