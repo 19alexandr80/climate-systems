@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const HeaderBlock = styled.nav`
-  background-color: gray;
+  background-color: red;
 `;
 export const HeadBl = styled.div`
   display: flex;
