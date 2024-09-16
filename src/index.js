@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/climate-systems">
+    <BrowserRouter basename="/climate-systems/">
       <App />
     </BrowserRouter>
   </React.StrictMode>
