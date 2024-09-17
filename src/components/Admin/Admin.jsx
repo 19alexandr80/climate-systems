@@ -6,7 +6,6 @@ import { Container } from "../stylesheet/Container.styled";
 
 export default function Admin() {
   const [cast, setCast] = useState([]);
-  // const params = useParams();
   useEffect(() => {
     const getApi = async () => {
       try {
@@ -19,7 +18,6 @@ export default function Admin() {
       } catch (error) {
         console.error(error.messeng);
       } finally {
-        // setStatus(false);
         return;
       }
     };
@@ -28,21 +26,8 @@ export default function Admin() {
 
   const delFeed = async (e) => {
     deleteFeedback(e.target.dataset.id);
-    console.log("try feedbak");
-    try {
-      console.log("try feedbak get");
-      const data = await getAllFeedback();
-      if (!data) {
-        alert("sorry no information yet");
-        return;
-      }
-      setCast(data);
-    } catch (error) {
-      console.error(error.messeng);
-    } finally {
-      // setStatus(false);
-      return;
-    }
+    const ddt = cast.filter((feed) => feed._id !== e.target.dataset.id);
+    setCast(ddt);
   };
 
   return (
