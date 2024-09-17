@@ -14,7 +14,7 @@ export const SpanStyle = styled.span`
   width: 120px;
   height: auto;
   float: left;
-  transition: 0.5s linear;
+  transition: 0.3s linear;
   position: relative;
   display: block;
   overflow: hidden;
@@ -57,12 +57,12 @@ export const SpanStyle = styled.span`
     border-color: #262626;
     height: 100%;
     transform: translateX(0);
-    transition: 0.3s transform linear, 0.3s height linear 0.3s;
+    transition: 0.1s transform linear, 0.1s height linear 0.1s;
   }
   &:hover:after {
     border-color: #262626;
     height: 100%;
     transform: translateX(0);
-    transition: 0.3s transform linear, 0.3s height linear 0.3s;
+    transition: 0.1s transform linear, 0.1s height linear 0.1s;
   }
 `;
