@@ -30,6 +30,7 @@ export const addFeedback = async (feedb) => {
     alert(`Massage sent uour id: ${response.data._id}`);
     return response;
   } catch (error) {
+    alert(error.response.data.message);
     console.error("errrrrror", error);
   }
 };
