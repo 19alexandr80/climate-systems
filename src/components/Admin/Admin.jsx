@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getAllFeedback, deleteFeedback } from "api/api";
 
 import { Container } from "../stylesheet/Container.styled";
+import { FeetBlock } from "./admin.styled";
 
 export default function Admin() {
   const [cast, setCast] = useState([]);
@@ -35,7 +36,7 @@ export default function Admin() {
       <Container>
         <div>
           <h1>Хотели потрындеть</h1>
-          <ul>
+          <FeetBlock>
             {cast.map((cast) => {
               return (
                 <li key={`${cast._id}`}>
@@ -50,7 +51,7 @@ export default function Admin() {
                 </li>
               );
             })}
-          </ul>
+          </FeetBlock>
         </div>
       </Container>
     </>

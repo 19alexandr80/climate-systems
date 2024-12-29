@@ -18,10 +18,18 @@ export default function Modal({ onClose }) {
         onClose();
       }
     };
+    const keyDown = (e) => {
+      if (e.keyCode === 13) {
+        // console.log("najali enter");
+        onSubmitForm(e);
+      }
+    };
+    window.addEventListener("keydown", keyDown);
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", keyDown);
     };
   }, [onClose]);
   const handleBackdropClick = (e) => {
@@ -119,7 +127,9 @@ export default function Modal({ onClose }) {
                 value={comment}
               ></textarea>
             </label>
-            <button onClick={onSubmitForm}>Отправить</button>
+            <button type="button" onClick={onSubmitForm}>
+              Отправить
+            </button>
           </s.ModalForm>
         </s.ModalCont>
       </s.ModalBack>

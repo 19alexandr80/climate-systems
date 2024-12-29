@@ -35,7 +35,7 @@ export const NavList = styled.ul`
     background-color: gray;
     transform: translate(
       104px,
-      ${(props) => (props.clicked ? "65%" : "-150%")}
+      ${(props) => (props.clicked === "true" ? "65%" : "-150%")}
     );
     padding: 20px;
     border-radius: 20px;
@@ -49,7 +49,7 @@ export const LinkStyle = styled(NavLink)`
   color: black;
   font-size: 25px;
   &.active {
-    border-bottom: 3px #2dc4ff solid;
+    /* border-bottom: 3px #2dc4ff solid; */
     color: #2dc4ff;
   }
   &:hover {
@@ -74,7 +74,8 @@ export const BurgerIcon = styled.div`
 `;
 export const Icon = styled.span`
   position: relative;
-  background-color: ${(props) => (props.clicked ? "transparent" : "black")};
+  background-color: ${(props) =>
+    props.clicked === "true" ? "transparent" : "black"};
   width: 3rem;
   height: 2px;
   display: inline-block;
@@ -91,12 +92,14 @@ export const Icon = styled.span`
     transition: all 0.3s;
   }
   &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked === "true" ? "0" : "-0.8rem")};
+    transform: ${(props) =>
+      props.clicked === "true" ? "rotate(135deg)" : "rotate(0)"};
   }
   &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked === "true" ? "0" : "0.8rem")};
+    transform: ${(props) =>
+      props.clicked === "true" ? "rotate(-135deg)" : "rotate(0)"};
   }
 `;
 export const Register = styled.li`

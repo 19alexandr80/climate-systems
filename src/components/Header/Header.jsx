@@ -24,26 +24,26 @@ export default function Header({ onOpen }) {
             </Link>
 
             <s.BurgerIcon onClick={onColor}>
-              <s.Icon clicked={colorBack}></s.Icon>
+              <s.Icon clicked={colorBack.toString()}></s.Icon>
             </s.BurgerIcon>
-            <s.NavList clicked={colorBack} onClick={onColor}>
-              <li>
+            <s.NavList clicked={colorBack.toString()} onClick={() => onColor}>
+              <li onClick={onColor}>
                 <s.LinkStyle to="/">Главная</s.LinkStyle>
               </li>
-              <li>
+              <li onClick={onColor}>
                 <s.LinkStyle to="/projects">Проэкты</s.LinkStyle>
               </li>
-              <li>
+              <li onClick={onColor}>
                 <s.LinkStyle to="/services">Услуги</s.LinkStyle>
               </li>
-              <li>
+              <li onClick={onColor}>
                 <s.LinkStyle to="/contacts">Контакты</s.LinkStyle>
               </li>
-              <s.Register>
+              <s.Register onClick={onColor}>
                 <button type="button">вход</button>
                 <button type="button">регистрация</button>
               </s.Register>
-              <li>
+              <li onClick={onColor}>
                 <ButtonFitback onOpen={onOpen} />
               </li>
             </s.NavList>

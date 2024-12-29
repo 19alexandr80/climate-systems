@@ -17,6 +17,7 @@ export const getAllFeedback = async () => {
     const response = await axios.get(`/feedback`);
     return response.data;
   } catch (error) {
+    alert(error.response.data.message);
     console.error("errrrrror", error);
   }
 };
@@ -24,7 +25,7 @@ export const getAllFeedback = async () => {
 export const deleteFeedback = async (id) => {
   try {
     const response = await axios.delete(`/feedback/${id}`);
-    console.log(response);
+    // console.log(response);
     return response;
   } catch (error) {
     console.error("errrrrror", error);

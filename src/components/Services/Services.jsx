@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useLocation } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 import { Container } from "../stylesheet/Container.styled";
 
@@ -39,7 +39,9 @@ export default function Services() {
               <NavLink to="ventilation">подробнее</NavLink>
             </li>
           </ul>
-          <Outlet />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
         </s.ServicesDiv>
       </Container>
     </>

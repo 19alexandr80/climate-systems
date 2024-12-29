@@ -11,6 +11,7 @@ export const ModalBack = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 11;
   background-image: url(${fotoWU});
   background-position: center;
   background-size: cover;
