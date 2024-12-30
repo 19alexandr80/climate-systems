@@ -4,6 +4,7 @@ import { getAllFeedback, deleteFeedback } from "api/api";
 
 import { Container } from "../stylesheet/Container.styled";
 import { FeetBlock } from "./admin.styled";
+import ButtonFitback from "components/ButtonFit/ButtonFit";
 
 export default function Admin() {
   const [cast, setCast] = useState([]);
@@ -26,8 +27,9 @@ export default function Admin() {
   }, []);
 
   const delFeed = async (e) => {
-    deleteFeedback(e.target.dataset.id);
-    const ddt = cast.filter((feed) => feed._id !== e.target.dataset.id);
+    deleteFeedback(e.currentTarget.dataset.id);
+    // console.log(e.currentTarget.dataset.id);
+    const ddt = cast.filter((feed) => feed._id !== e.currentTarget.dataset.id);
     setCast(ddt);
   };
 
@@ -45,9 +47,9 @@ export default function Admin() {
                   <p>email: {cast.email}</p>
                   <p>{cast.message}</p>
                   <p>date: {cast.updatedAt.toString()}</p>
-                  <button type="button" onClick={delFeed} data-id={cast._id}>
-                    delete
-                  </button>
+                  <div onClick={delFeed} data-id={cast._id}>
+                    <ButtonFitback cont={"Видалити"} />
+                  </div>
                 </li>
               );
             })}

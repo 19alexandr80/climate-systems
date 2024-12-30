@@ -48,6 +48,9 @@ export const SpanStyle = styled.span`
     box-sizing: border-box;
     transform: translateX(-100%);
   }
+  &:active {
+    background-color: rgb(9, 43, 56);
+  }
   &:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 8px;

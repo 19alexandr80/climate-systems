@@ -2,6 +2,8 @@ import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "./layout";
+import Login from "./Login/Login";
+import Register from "./Register/Register";
 
 const Main = lazy(() => import("./Main/Main"));
 const Projects = lazy(() => import("../components/Projects/Projects"));
@@ -24,6 +26,8 @@ function App() {
           <Route path="ventilation" element={<Ventilation />} />
         </Route>
         <Route path="contacts" element={<Contacts />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Route>
     </Routes>
   );

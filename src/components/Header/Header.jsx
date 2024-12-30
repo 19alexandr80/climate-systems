@@ -40,11 +40,15 @@ export default function Header({ onOpen }) {
                 <s.LinkStyle to="/contacts">Контакты</s.LinkStyle>
               </li>
               <s.Register onClick={onColor}>
-                <button type="button">вход</button>
-                <button type="button">регистрация</button>
+                <Link to={"/login"}>
+                  <ButtonFitback cont={"Вход"} />
+                </Link>
+                <Link to={"/register"}>
+                  <ButtonFitback cont={"Регистрация"} />
+                </Link>
               </s.Register>
               <li onClick={onColor}>
-                <ButtonFitback onOpen={onOpen} />
+                <ButtonFitback onOpen={onOpen} cont={"Обратная связь"} />
               </li>
             </s.NavList>
           </s.HeadBl>
