@@ -31,7 +31,7 @@ export default function Modal({ onClose }) {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keydown", keyDown);
     };
-  }, [onClose]);
+  }, [onClose, onSubmitForm]);
   const handleBackdropClick = (e) => {
     if (e.currentTarget === e.target) {
       onClose();
