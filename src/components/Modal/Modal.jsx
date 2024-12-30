@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 import { addFeedback } from "api/api";
 
@@ -31,7 +31,7 @@ export default function Modal({ onClose }) {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keydown", keyDown);
     };
-  }, [onClose, onSubmitForm]);
+  });
   const handleBackdropClick = (e) => {
     if (e.currentTarget === e.target) {
       onClose();
@@ -56,22 +56,25 @@ export default function Modal({ onClose }) {
         break;
     }
   };
-  const onSubmitForm = (e) => {
-    e.preventDefault();
-    const data = {
-      name: name,
-      phone: telephone,
-      message: comment,
-      email: email,
-    };
+  const onSubmitForm = useCallback(
+    (e) => {
+      e.preventDefault();
+      const data = {
+        name: name,
+        phone: telephone,
+        message: comment,
+        email: email,
+      };
 
-    addFeedback(data);
+      addFeedback(data);
 
-    setName("");
-    setTelephone("");
-    setComment("");
-    setEmail("");
-  };
+      setName("");
+      setTelephone("");
+      setComment("");
+      setEmail("");
+    },
+    [name, telephone, comment, email]
+  );
   return createPortal(
     <>
       <s.ModalBack onClick={handleBackdropClick}>
