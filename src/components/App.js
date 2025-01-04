@@ -2,6 +2,8 @@ import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "./layout";
+import { PrivateRoute } from "./PrivateRoute";
+import { RestrictedRoute } from "./RestrictedRoute";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
 
@@ -19,15 +21,26 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Main />} />
-        <Route path="projects" element={<Projects />} />
+        <Route
+          path="projects"
+          element={<PrivateRoute element={Projects} redirecrTo="/" />}
+        />
         <Route path="dmn" element={<Admin />} />
         <Route path="services" element={<Services />}>
           <Route path="aircond" element={<Aircond />} />
           <Route path="ventilation" element={<Ventilation />} />
         </Route>
         <Route path="contacts" element={<Contacts />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
+        <Route
+          path="login"
+          element={<RestrictedRoute element={Login} redirecrTo="/projects" />}
+        />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute element={Register} redirecrTo="/projects" />
+          }
+        />
       </Route>
     </Routes>
   );

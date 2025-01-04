@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { logOut } from "../../redux/operations";
 
 import logo from "../../images/logo/logo.png";
 
@@ -9,6 +12,11 @@ import * as s from "./Header.styled";
 
 export default function Header({ onOpen }) {
   const [colorBack, setColorBack] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const isLoggedIn = useSelector((state) => state.contacts.isLoggedIn);
+  const token = useSelector((state) => state.contacts.token);
 
   const onColor = () => {
     setColorBack(!colorBack);
@@ -30,23 +38,32 @@ export default function Header({ onOpen }) {
               <li onClick={onColor}>
                 <s.LinkStyle to="/">Главная</s.LinkStyle>
               </li>
-              <li onClick={onColor}>
-                <s.LinkStyle to="/projects">Проэкты</s.LinkStyle>
-              </li>
+              {isLoggedIn && (
+                <li onClick={onColor}>
+                  <s.LinkStyle to="/projects">Проэкты</s.LinkStyle>
+                </li>
+              )}
               <li onClick={onColor}>
                 <s.LinkStyle to="/services">Услуги</s.LinkStyle>
               </li>
               <li onClick={onColor}>
                 <s.LinkStyle to="/contacts">Контакты</s.LinkStyle>
               </li>
-              <s.Register onClick={onColor}>
-                <Link to={"/login"}>
-                  <ButtonFitback cont={"Вход"} />
-                </Link>
-                <Link to={"/register"}>
-                  <ButtonFitback cont={"Регистрация"} />
-                </Link>
-              </s.Register>
+              {isLoggedIn ? (
+                <div onClick={() => dispatch(logOut(token))}>
+                  <ButtonFitback cont={"LOGOUT"} />
+                </div>
+              ) : (
+                <s.Register onClick={onColor}>
+                  <Link to={"/login"}>
+                    <ButtonFitback cont={"Вход"} />
+                  </Link>
+                  <Link to={"/register"}>
+                    <ButtonFitback cont={"Регистрация"} />
+                  </Link>
+                </s.Register>
+              )}
+
               <li onClick={onColor}>
                 <ButtonFitback onOpen={onOpen} cont={"Обратная связь"} />
               </li>
