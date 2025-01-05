@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/climate-systems/static/css/main.3076ec6b.css",
-    "main.js": "/climate-systems/static/js/main.ff6ee43d.js",
+    "main.js": "/climate-systems/static/js/main.0186f675.js",
     "static/js/501.bd4878ae.chunk.js": "/climate-systems/static/js/501.bd4878ae.chunk.js",
-    "static/js/3.f55a6707.chunk.js": "/climate-systems/static/js/3.f55a6707.chunk.js",
-    "static/js/258.c7ef4888.chunk.js": "/climate-systems/static/js/258.c7ef4888.chunk.js",
+    "static/js/3.ff91043d.chunk.js": "/climate-systems/static/js/3.ff91043d.chunk.js",
+    "static/js/258.496bde69.chunk.js": "/climate-systems/static/js/258.496bde69.chunk.js",
     "static/js/720.6061ef90.chunk.js": "/climate-systems/static/js/720.6061ef90.chunk.js",
     "static/js/739.b92e5ef6.chunk.js": "/climate-systems/static/js/739.b92e5ef6.chunk.js",
     "static/js/774.478da767.chunk.js": "/climate-systems/static/js/774.478da767.chunk.js",
@@ -70,10 +70,10 @@
     "static/media/next.svg": "/climate-systems/static/media/next.e92b78f8be3df1ec719a56ff38af5559.svg",
     "static/media/previous.svg": "/climate-systems/static/media/previous.a6ccc15117ea296c5c1c8d2094215a40.svg",
     "main.3076ec6b.css.map": "/climate-systems/static/css/main.3076ec6b.css.map",
-    "main.ff6ee43d.js.map": "/climate-systems/static/js/main.ff6ee43d.js.map",
+    "main.0186f675.js.map": "/climate-systems/static/js/main.0186f675.js.map",
     "501.bd4878ae.chunk.js.map": "/climate-systems/static/js/501.bd4878ae.chunk.js.map",
-    "3.f55a6707.chunk.js.map": "/climate-systems/static/js/3.f55a6707.chunk.js.map",
-    "258.c7ef4888.chunk.js.map": "/climate-systems/static/js/258.c7ef4888.chunk.js.map",
+    "3.ff91043d.chunk.js.map": "/climate-systems/static/js/3.ff91043d.chunk.js.map",
+    "258.496bde69.chunk.js.map": "/climate-systems/static/js/258.496bde69.chunk.js.map",
     "720.6061ef90.chunk.js.map": "/climate-systems/static/js/720.6061ef90.chunk.js.map",
     "739.b92e5ef6.chunk.js.map": "/climate-systems/static/js/739.b92e5ef6.chunk.js.map",
     "774.478da767.chunk.js.map": "/climate-systems/static/js/774.478da767.chunk.js.map",
@@ -82,6 +82,6 @@
   },
   "entrypoints": [
     "static/css/main.3076ec6b.css",
-    "static/js/main.ff6ee43d.js"
+    "static/js/main.0186f675.js"
   ]
 }
