@@ -1,15 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
-// import {} from "../../redux/store";
+
+import * as s from "./Login.styled";
 
 // import { incrA, decrA, nameUser, clireNameUser } from "../../redux/slice";
-import { logIn, logOut } from "../../redux/operations";
+import { logIn } from "../../redux/operations";
+
+import ButtonFitback from "components/ButtonFit/ButtonFit";
 
 import { Container } from "../stylesheet/Container.styled";
 
 export default function Login() {
   const email = useSelector((state) => state.contacts.user.email);
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.contacts.token);
+  const isLoading = useSelector((state) => state.contacts.isLoading);
 
   const formSubmit = (e) => {
     e.preventDefault();
@@ -36,22 +39,21 @@ export default function Login() {
           </div>
           <div>
             <h2>FORM</h2>
-            <form onSubmit={formSubmit}>
-              <label>
-                Email
-                <input type="email" name="email" />
-              </label>
-              <label>
-                Password
-                <input type="password" name="password" />
-              </label>
-              <button type="submit">Log In</button>
-            </form>
-          </div>
-          <div>
-            <button type="button" onClick={() => dispatch(logOut(token))}>
-              Log out
-            </button>
+            {isLoading ? (
+              <div>...loding...</div>
+            ) : (
+              <s.loginForm onSubmit={formSubmit}>
+                <label>
+                  Email
+                  <input type="email" name="email" />
+                </label>
+                <label>
+                  Password
+                  <input type="password" name="password" />
+                </label>
+                <ButtonFitback cont={"LOGIN"} type={"submit"} />
+              </s.loginForm>
+            )}
           </div>
         </div>
       </Container>

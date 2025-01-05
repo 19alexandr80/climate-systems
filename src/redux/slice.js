@@ -24,12 +24,12 @@ export const contactsSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {
-    nameUser(state, action) {
-      state.user.name = action.payload;
-    },
-    clireNameUser(state) {
-      state.user.name = null;
-    },
+    // nameUser(state, action) {
+    //   state.user.name = action.payload;
+    // },
+    // clireNameUser(state) {
+    //   state.user.name = null;
+    // },
   },
   extraReducers: (builder) =>
     builder
@@ -45,11 +45,13 @@ export const contactsSlice = createSlice({
       .addCase(logIn.fulfilled, (state, action) => {
         if (!action.payload.token) {
           console.log(action.payload.message);
+          state.isLoading = false;
           return alert(action.payload.message);
         } else {
           state.token = action.payload.token;
           state.user = action.payload.user;
           state.isLoggedIn = true;
+          state.isLoading = false;
         }
       })
       .addCase(logOut.pending, handlePending)

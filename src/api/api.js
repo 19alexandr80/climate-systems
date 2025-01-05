@@ -66,7 +66,7 @@ export const loginUser = async function (params) {
     options
   )
     .then((response) => response.json())
-    .catch((error) => alert(error));
+    .catch((error) => alert("login " + error));
   return userAuth;
 };
 

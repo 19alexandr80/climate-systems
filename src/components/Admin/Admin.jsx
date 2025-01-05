@@ -8,18 +8,24 @@ import ButtonFitback from "components/ButtonFit/ButtonFit";
 
 export default function Admin() {
   const [cast, setCast] = useState([]);
+  const [loding, setLoding] = useState(false);
   useEffect(() => {
     const getApi = async () => {
       try {
+        setLoding(true);
         const data = await getAllFeedback();
         if (!data) {
           alert("sorry no information yet");
+          setLoding(false);
           return;
         }
         setCast(data);
+        setLoding(false);
       } catch (error) {
+        setLoding(false);
         console.error(error.messeng);
       } finally {
+        setLoding(false);
         return;
       }
     };
@@ -38,22 +44,26 @@ export default function Admin() {
       <Container>
         <div>
           <h1>Хотели потрындеть</h1>
-          <FeetBlock>
-            {cast.map((cast) => {
-              return (
-                <li key={`${cast._id}`}>
-                  <h3>{cast.name}</h3>
-                  <p>tel: {cast.phone}</p>
-                  <p>email: {cast.email}</p>
-                  <p>{cast.message}</p>
-                  <p>date: {cast.updatedAt.toString()}</p>
-                  <div onClick={delFeed} data-id={cast._id}>
-                    <ButtonFitback cont={"Видалити"} />
-                  </div>
-                </li>
-              );
-            })}
-          </FeetBlock>
+          {loding ? (
+            <div>loding data... please wait </div>
+          ) : (
+            <FeetBlock>
+              {cast.map((cast) => {
+                return (
+                  <li key={`${cast._id}`}>
+                    <h3>{cast.name}</h3>
+                    <p>tel: {cast.phone}</p>
+                    <p>email: {cast.email}</p>
+                    <p>{cast.message}</p>
+                    <p>date: {cast.updatedAt.toString()}</p>
+                    <div onClick={delFeed} data-id={cast._id}>
+                      <ButtonFitback cont={"Видалити"} />
+                    </div>
+                  </li>
+                );
+              })}
+            </FeetBlock>
+          )}
         </div>
       </Container>
     </>

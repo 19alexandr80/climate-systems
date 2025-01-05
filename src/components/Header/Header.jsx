@@ -17,6 +17,7 @@ export default function Header({ onOpen }) {
 
   const isLoggedIn = useSelector((state) => state.contacts.isLoggedIn);
   const token = useSelector((state) => state.contacts.token);
+  const email = useSelector((state) => state.contacts.user.email);
 
   const onColor = () => {
     setColorBack(!colorBack);
@@ -50,7 +51,13 @@ export default function Header({ onOpen }) {
                 <s.LinkStyle to="/contacts">Контакты</s.LinkStyle>
               </li>
               {isLoggedIn ? (
-                <div onClick={() => dispatch(logOut(token))}>
+                <div
+                  onClick={() => {
+                    dispatch(logOut(token));
+                    onColor();
+                  }}
+                >
+                  <h2>{email}</h2>
                   <ButtonFitback cont={"LOGOUT"} />
                 </div>
               ) : (
