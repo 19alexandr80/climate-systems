@@ -34,7 +34,6 @@ export default function Admin() {
 
   const delFeed = async (e) => {
     deleteFeedback(e.currentTarget.dataset.id);
-    // console.log(e.currentTarget.dataset.id);
     const ddt = cast.filter((feed) => feed._id !== e.currentTarget.dataset.id);
     setCast(ddt);
   };
