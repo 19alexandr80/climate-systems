@@ -106,3 +106,7 @@ export const Register = styled.li`
   display: flex;
   flex-direction: column;
 `;
+
+export const UserName = styled.h2`
+  text-align: center;
+`;

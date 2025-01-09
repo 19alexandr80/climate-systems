@@ -17,7 +17,7 @@ export default function Header({ onOpen }) {
 
   const isLoggedIn = useSelector((state) => state.contacts.isLoggedIn);
   const token = useSelector((state) => state.contacts.token);
-  const email = useSelector((state) => state.contacts.user.email);
+  const name = useSelector((state) => state.contacts.user.name);
 
   const onColor = () => {
     setColorBack(!colorBack);
@@ -57,7 +57,7 @@ export default function Header({ onOpen }) {
                     onColor();
                   }}
                 >
-                  <h2>{email}</h2>
+                  <s.UserName>{name}</s.UserName>
                   <ButtonFitback cont={"LOGOUT"} />
                 </div>
               ) : (

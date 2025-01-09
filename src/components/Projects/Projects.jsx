@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import { getClientObj } from "api/client";
@@ -12,11 +12,14 @@ import * as s from "./Projects.styled";
 export default function Projects() {
   const [cast, setCast] = useState([]);
   const [loding, setLoding] = useState(false);
-  const email = useSelector((state) => state.contacts.user.email);
+  const name = useSelector((state) => state.contacts.user.name);
   const token = useSelector((state) => state.contacts.token);
+  const params = useMemo(() => {
+    const p = { token, name };
+    return p;
+  }, [name, token]);
 
   useEffect(() => {
-    const params = { token, email };
     const getApi = async () => {
       try {
         setLoding(true);
@@ -37,29 +40,34 @@ export default function Projects() {
       }
     };
     getApi();
-  }, [token, email]);
+  }, [params]);
 
-  // console.log(cast);
   return (
     <>
       <Container>
         <s.ProjectsDiv>
-          <h1>Проэкты {email}</h1>
+          <h1>Проэкты {name}</h1>
           <Link to={"/dmn"}>DMN</Link>
           {loding ? (
             <div>loding data... please wait </div>
           ) : (
             <div>
-              {cast.map((cast) => {
-                return (
-                  <li key={`${cast._id}`}>
-                    <h3>{cast.name}</h3>
-                    <p>tel: {cast.phone}</p>
-                    <p>email: {cast.email}</p>
-                    <p>adress: {cast.adress}</p>
-                  </li>
-                );
-              })}
+              {cast.length >= 1 ? (
+                <ul>
+                  {cast.map((cast) => {
+                    return (
+                      <li key={`${cast._id}`}>
+                        <h3>{cast.name}</h3>
+                        <p>tel: {cast.phone}</p>
+                        <p>email: {cast.email}</p>
+                        <p>adress: {cast.adress}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <p>NOT DATA</p>
+              )}
             </div>
           )}
         </s.ProjectsDiv>
@@ -67,3 +75,15 @@ export default function Projects() {
     </>
   );
 }
+// {
+//   cast.map((cast) => {
+//     return (
+//       <li key={`${cast._id}`}>
+//         <h3>{cast.name}</h3>
+//         <p>tel: {cast.phone}</p>
+//         <p>email: {cast.email}</p>
+//         <p>adress: {cast.adress}</p>
+//       </li>
+//     );
+//   });
+// }

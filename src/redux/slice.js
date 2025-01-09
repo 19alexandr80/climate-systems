@@ -2,12 +2,12 @@ import { createAction, createReducer, createSlice } from "@reduxjs/toolkit";
 
 import { logIn, register, logOut } from "./operations";
 
-export const incrA = createAction("objj/incrA");
-export const decrA = createAction("obdjj/decrA");
+export const open = createAction("objj/incrA");
+export const close = createAction("obdjj/decrA");
 
 const initialState = {
   value: [],
-  user: { subscription: null, email: null, id: null },
+  user: { subscription: null, name: null, id: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -68,15 +68,15 @@ export const contactsSlice = createSlice({
 
 export const myObjj = createReducer(
   {
-    a: 0,
+    modal: false,
   },
   (builder) => {
     builder
-      .addCase(incrA, (state, action) => {
-        state.a = state.a + action.payload;
+      .addCase(open, (state, action) => {
+        state.modal = true;
       })
-      .addCase(decrA, (state, _) => {
-        state.a -= 1;
+      .addCase(close, (state, _) => {
+        state.modal = false;
       });
   }
 );

@@ -10,7 +10,6 @@ import ButtonFitback from "components/ButtonFit/ButtonFit";
 import { Container } from "../stylesheet/Container.styled";
 
 export default function Login() {
-  const email = useSelector((state) => state.contacts.user.email);
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.contacts.isLoading);
 
@@ -20,7 +19,7 @@ export default function Login() {
 
     dispatch(
       logIn({
-        email: form.elements.email.value,
+        name: form.elements.name.value,
         password: form.elements.password.value,
       })
     );
@@ -34,18 +33,14 @@ export default function Login() {
           <h1>LOGIN</h1>
 
           <div>
-            {email && <h2>{email}</h2>}
-            <div></div>
-          </div>
-          <div>
             <h2>FORM</h2>
             {isLoading ? (
               <div>...loding...</div>
             ) : (
               <s.loginForm onSubmit={formSubmit}>
                 <label>
-                  Email
-                  <input type="email" name="email" />
+                  Name
+                  <input type="name" name="name" />
                 </label>
                 <label>
                   Password
