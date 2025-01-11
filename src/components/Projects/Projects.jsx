@@ -19,7 +19,6 @@ export default function Projects() {
     const p = { token, name };
     return p;
   }, [name, token]);
-  console.log(subscription);
   useEffect(() => {
     const getApi = async () => {
       try {
@@ -89,7 +88,7 @@ export default function Projects() {
           ) : (
             <div>
               {cast.length >= 1 ? (
-                <ul>
+                <s.Ul>
                   {cast.map((cast) => {
                     return (
                       <li key={`${cast._id}`}>
@@ -98,16 +97,21 @@ export default function Projects() {
                         <div>client: {cast.client}</div>
                         <div>tel: {cast.phone}</div>
                         <div>adress: {cast.adress}</div>
-                        <div>
-                          adminName:
-                          {cast.adminName.map((admin) => (
-                            <div>__ {admin}</div>
-                          ))}
-                        </div>
+                        <s.DropdownDiv>
+                          <s.Dropbtn>adminName:</s.Dropbtn>
+                          <s.DropdownContent
+                            style={{ left: 0 }}
+                            className="content"
+                          >
+                            {cast.adminName.map((admin) => (
+                              <div key={admin}>{admin}</div>
+                            ))}
+                          </s.DropdownContent>
+                        </s.DropdownDiv>
                       </li>
                     );
                   })}
-                </ul>
+                </s.Ul>
               ) : (
                 <p>NOT DATA</p>
               )}
