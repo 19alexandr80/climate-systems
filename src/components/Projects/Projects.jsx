@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 
-import { getClientObj } from "api/client";
+import { getObjectsAdmin, getAllObjects, getObjectsClient } from "api/client";
 
 import { Container } from "../stylesheet/Container.styled";
 
@@ -14,23 +14,59 @@ export default function Projects() {
   const [loding, setLoding] = useState(false);
   const name = useSelector((state) => state.contacts.user.name);
   const token = useSelector((state) => state.contacts.token);
+  const subscription = useSelector((state) => state.contacts.user.subscription);
   const params = useMemo(() => {
     const p = { token, name };
     return p;
   }, [name, token]);
-
+  console.log(subscription);
   useEffect(() => {
     const getApi = async () => {
       try {
         setLoding(true);
-        const data = await getClientObj(params);
-        if (!data) {
-          alert("sorry no information yetNONE");
-          setLoding(false);
-          return;
+        switch (subscription) {
+          case "superadmin":
+            const allObjects = await getAllObjects(params);
+            if (!allObjects) {
+              alert("sorry no information yetNONE");
+              setLoding(false);
+              return;
+            }
+            setCast(allObjects);
+            setLoding(false);
+            return;
+          case "admin":
+            const objectsAdmin = await getObjectsAdmin(params);
+            if (!objectsAdmin) {
+              alert("sorry no information yetNONE");
+              setLoding(false);
+              return;
+            }
+            setCast(objectsAdmin);
+            setLoding(false);
+            return;
+          case "client":
+            const objectsClient = await getObjectsClient(params);
+            if (!objectsClient) {
+              alert("sorry no information yetNONE");
+              setLoding(false);
+              return;
+            }
+            setCast(objectsClient);
+            setLoding(false);
+            return;
+          default:
+            alert("Нет таких значений");
         }
-        setCast(data);
-        setLoding(false);
+        // const data = await getObjectsAdmin(params);
+        // console.log(data);
+        // if (!data) {
+        //   alert("sorry no information yetNONE");
+        //   setLoding(false);
+        //   return;
+        // }
+        // setCast(data);
+        // setLoding(false);
       } catch (error) {
         setLoding(false);
         console.error(error.messeng);
@@ -40,7 +76,7 @@ export default function Projects() {
       }
     };
     getApi();
-  }, [params]);
+  }, [params, subscription]);
 
   return (
     <>
@@ -58,9 +94,16 @@ export default function Projects() {
                     return (
                       <li key={`${cast._id}`}>
                         <h3>{cast.name}</h3>
-                        <p>tel: {cast.phone}</p>
-                        <p>email: {cast.email}</p>
-                        <p>adress: {cast.adress}</p>
+
+                        <div>client: {cast.client}</div>
+                        <div>tel: {cast.phone}</div>
+                        <div>adress: {cast.adress}</div>
+                        <div>
+                          adminName:
+                          {cast.adminName.map((admin) => (
+                            <div>__ {admin}</div>
+                          ))}
+                        </div>
                       </li>
                     );
                   })}
@@ -75,15 +118,3 @@ export default function Projects() {
     </>
   );
 }
-// {
-//   cast.map((cast) => {
-//     return (
-//       <li key={`${cast._id}`}>
-//         <h3>{cast.name}</h3>
-//         <p>tel: {cast.phone}</p>
-//         <p>email: {cast.email}</p>
-//         <p>adress: {cast.adress}</p>
-//       </li>
-//     );
-//   });
-// }

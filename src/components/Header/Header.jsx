@@ -65,9 +65,9 @@ export default function Header({ onOpen }) {
                   <Link to={"/login"}>
                     <ButtonFitback cont={"Вход"} />
                   </Link>
-                  <Link to={"/register"}>
+                  {/* <Link to={"/register"}>
                     <ButtonFitback cont={"Регистрация"} />
-                  </Link>
+                  </Link> */}
                 </s.Register>
               )}
 

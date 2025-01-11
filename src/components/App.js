@@ -37,9 +37,7 @@ function App() {
         />
         <Route
           path="register"
-          element={
-            <RestrictedRoute element={Register} redirecrTo="/projects" />
-          }
+          element={<PrivateRoute element={Register} redirecrTo="/projects" />}
         />
       </Route>
     </Routes>

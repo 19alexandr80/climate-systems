@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { getAllFeedback, deleteFeedback } from "api/api";
 
@@ -42,6 +43,9 @@ export default function Admin() {
     <>
       <Container>
         <div>
+          <Link to={"/register"}>
+            <ButtonFitback cont={"Регистрация object"} />
+          </Link>
           <h1>Хотели потрындеть</h1>
           {loding ? (
             <div>loding data... please wait </div>

@@ -16,6 +16,7 @@ export default function Register() {
     const form = e.target;
     const options = {
       name: form.elements.name.value,
+      client: form.elements.client.value,
       adress: form.elements.adress.value,
       phone: form.elements.phone.value,
       adminName: form.elements.nameAdmin.value,
@@ -35,6 +36,10 @@ export default function Register() {
             <label>
               Name
               <input type="text" name="name" />
+            </label>
+            <label>
+              Client
+              <input type="text" name="client" />
             </label>
             <label>
               Adress
