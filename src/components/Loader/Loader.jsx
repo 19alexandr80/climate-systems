@@ -1,15 +1,34 @@
-import { ColorRing } from "react-loader-spinner";
+import { FidgetSpinner, Hourglass } from "react-loader-spinner";
 
 export const Loader = () => {
   return (
-    <ColorRing
-      visible={true}
-      height="80"
-      width="80"
-      ariaLabel="blocks-loading"
-      wrapperStyle={{}}
-      wrapperClass="blocks-wrapper"
-      colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
-    />
+    <div style={{ textAlign: "center" }}>
+      <FidgetSpinner
+        visible={true}
+        height="180"
+        width="180"
+        ariaLabel="fidget-spinner-loading"
+        wrapperStyle={{}}
+        wrapperClass="fidget-spinner-wrapper"
+        backgroundColor="gray"
+        ballColors={["#2dc4ff", "#2dc4ff", "#2dc4ff"]}
+      />
+    </div>
+  );
+};
+
+export const LoaderHourglass = () => {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        colors={["gray", "#2dc4ff"]}
+      />
+    </div>
   );
 };

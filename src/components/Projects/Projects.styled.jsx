@@ -11,7 +11,7 @@ export const ProjectsDiv = styled.div`
 export const DropdownDiv = styled.div`
   position: relative;
   display: inline-block;
-  &:hover ~ .content {
+  &:hover .content {
     display: block;
   }
 `;
@@ -20,9 +20,6 @@ export const Dropbtn = styled.div`
   font-size: 16px;
   border: none;
   cursor: pointer;
-  &:hover ~ .content {
-    display: block;
-  }
 `;
 export const DropdownContent = styled.div`
   display: none;
@@ -33,15 +30,14 @@ export const DropdownContent = styled.div`
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  :hover {
-    display: block;
-  }
+
   div {
     padding: 4px 8px;
     text-decoration: none;
+    border-radius: 5px;
     display: block;
     &:hover {
-      background-color: #f1f1f1;
+      background-color: #dadada;
     }
   }
 `;

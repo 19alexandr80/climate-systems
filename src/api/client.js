@@ -22,14 +22,17 @@ export const getObjectName = async function (params) {
 };
 
 export const addClient = async (params) => {
-  const { token, name, adminName, adress, phone, client } = params;
+  const { token, name, adminName, namePhone, adress, phone, client } = params;
   const options = {
     method: "POST",
     body: JSON.stringify({
       name,
       adminName,
       adress,
-      phone,
+      phone: {
+        name: namePhone,
+        number: phone,
+      },
       client,
       token,
     }),
@@ -42,7 +45,10 @@ export const addClient = async (params) => {
     "https://climat-backend.onrender.com/dataClient",
     options
   )
-    .then((response) => response.json())
+    .then((response) => {
+      alert("Objekt add");
+      return response.json();
+    })
     .catch((error) => alert(error));
   return userAuth;
 };

@@ -18,6 +18,7 @@ export default function Register() {
       name: form.elements.name.value,
       client: form.elements.client.value,
       adress: form.elements.adress.value,
+      namePhone: form.elements.namePhone.value,
       phone: form.elements.phone.value,
       adminName: form.elements.nameAdmin.value,
       token,
@@ -45,10 +46,16 @@ export default function Register() {
               Adress
               <input type="text" name="adress" />
             </label>
-            <label>
-              Phone
-              <input type="phone" name="phone" />
-            </label>
+            <div>
+              <label>
+                namePhone
+                <input type="text" name="namePhone" />
+              </label>
+              <label>
+                Number
+                <input type="phone" name="phone" />
+              </label>
+            </div>
             <label>
               Name Admin
               <input type="text" name="nameAdmin" />

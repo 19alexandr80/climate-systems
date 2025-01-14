@@ -6,6 +6,7 @@ import { getAllFeedback, deleteFeedback } from "api/api";
 import { Container } from "../stylesheet/Container.styled";
 import { FeetBlock } from "./admin.styled";
 import ButtonFitback from "components/ButtonFit/ButtonFit";
+import { LoaderHourglass } from "components/Loader/Loader";
 
 export default function Admin() {
   const [cast, setCast] = useState([]);
@@ -48,7 +49,7 @@ export default function Admin() {
           </Link>
           <h1>Хотели потрындеть</h1>
           {loding ? (
-            <div>loding data... please wait </div>
+            <LoaderHourglass />
           ) : (
             <FeetBlock>
               {cast.map((cast) => {

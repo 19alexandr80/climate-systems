@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 
 import { getObjectsAdmin, getAllObjects, getObjectsClient } from "api/client";
 
+import { LoaderHourglass } from "components/Loader/Loader";
+
 import { Container } from "../stylesheet/Container.styled";
 
 import * as s from "./Projects.styled";
@@ -84,7 +86,7 @@ export default function Projects() {
           <h1>Проэкты {name}</h1>
           <Link to={"/dmn"}>DMN</Link>
           {loding ? (
-            <div>loding data... please wait </div>
+            <LoaderHourglass />
           ) : (
             <div>
               {cast.length >= 1 ? (
@@ -93,10 +95,22 @@ export default function Projects() {
                     return (
                       <li key={`${cast._id}`}>
                         <h3>{cast.name}</h3>
-
-                        <div>client: {cast.client}</div>
-                        <div>tel: {cast.phone}</div>
                         <div>adress: {cast.adress}</div>
+                        <div>client: {cast.client}</div>
+                        <s.DropdownDiv>
+                          <s.Dropbtn>telefone:</s.Dropbtn>
+                          <s.DropdownContent
+                            style={{ left: 0 }}
+                            className="content"
+                          >
+                            {cast.phone.map((us) => (
+                              <div key={us._id}>
+                                <p>{us.name}</p>
+                                <p>{us.number}</p>
+                              </div>
+                            ))}
+                          </s.DropdownContent>
+                        </s.DropdownDiv>
                         <s.DropdownDiv>
                           <s.Dropbtn>adminName:</s.Dropbtn>
                           <s.DropdownContent
