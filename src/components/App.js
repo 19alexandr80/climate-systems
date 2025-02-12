@@ -12,6 +12,10 @@ const Projects = lazy(() => import("../components/Projects/Projects"));
 const Admin = lazy(() => import("../components/Admin/Admin"));
 const Services = lazy(() => import("../components/Services/Services"));
 const Contacts = lazy(() => import("../components/Contacts/Contacts"));
+const ObjectPage = lazy(() =>
+  import("../components/Projects/ObjectPage/ObjectPage")
+);
+// ObjectPage
 
 const Aircond = lazy(() => import("../components/Services/Aircond"));
 const Ventilation = lazy(() => import("../components/Services/Ventilation"));
@@ -24,6 +28,10 @@ function App() {
         <Route
           path="projects"
           element={<PrivateRoute element={Projects} redirecrTo="/" />}
+        />
+        <Route
+          path="projects/:objectName"
+          element={<PrivateRoute element={ObjectPage} redirecrTo="/" />}
         />
         <Route path="dmn" element={<Admin />} />
         <Route path="services" element={<Services />}>

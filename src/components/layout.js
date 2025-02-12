@@ -1,5 +1,7 @@
-import { useState, Suspense } from "react";
+import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -7,25 +9,18 @@ import Modal from "./Modal/Modal";
 import { Loader } from "./Loader/Loader";
 
 export const Layout = () => {
-  const [modal, setModal] = useState("false");
+  const modals = useSelector((state) => state.objj.modals);
 
-  const onClose = () => {
-    setModal(() => "false");
-  };
-
-  const onOpen = () => {
-    setModal(() => "true");
-  };
   return (
     <>
-      <Header onOpen={onOpen} />
+      <Header />
       <main>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </main>
-      <Footer onOpen={onOpen} />
-      {modal === "true" && <Modal onClose={onClose} />}
+      <Footer />
+      {modals && <Modal />}
     </>
   );
 };

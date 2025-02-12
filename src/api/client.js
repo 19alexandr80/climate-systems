@@ -106,3 +106,44 @@ export const getAllObjects = async (params) => {
     .catch((error) => alert(error));
   return userAuth;
 };
+export const addPhone = async (params) => {
+  const { token, nameObject, namePhone, number } = params;
+  const options = {
+    method: "POST",
+    body: JSON.stringify({
+      name: namePhone,
+      number,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const objectNew = await fetch(
+    `https://climat-backend.onrender.com/dataClient/numberPhone/${nameObject}`,
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return objectNew;
+};
+export const deletePhoneAdmin = async (params) => {
+  const { token, nameObject, id } = params;
+  const options = {
+    method: "DELETE",
+    body: JSON.stringify({
+      id,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const objectNew = await fetch(
+    `https://climat-backend.onrender.com/dataClient/numberPhone/${nameObject}`,
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return objectNew;
+};

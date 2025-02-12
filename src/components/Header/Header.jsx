@@ -4,13 +4,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { logOut } from "../../redux/operations";
 
+import { open } from "../../redux/slice";
+
 import logo from "../../images/logo/logo.png";
 
 import { Container } from "components/stylesheet/Container.styled";
 import ButtonFitback from "components/ButtonFit/ButtonFit";
 import * as s from "./Header.styled";
 
-export default function Header({ onOpen }) {
+export default function Header() {
   const [colorBack, setColorBack] = useState(false);
 
   const dispatch = useDispatch();
@@ -71,8 +73,14 @@ export default function Header({ onOpen }) {
                 </s.Register>
               )}
 
-              <li onClick={onColor}>
-                <ButtonFitback onOpen={onOpen} cont={"Обратная связь"} />
+              {/* <li onClick={onColor}> */}
+              <li
+                onClick={() => {
+                  dispatch(open());
+                  onColor();
+                }}
+              >
+                <ButtonFitback cont={"Обратная связь"} />
               </li>
             </s.NavList>
           </s.HeadBl>

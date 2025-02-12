@@ -11,7 +11,7 @@ export default function Register() {
   // const dispatch = useDispatch();
   const token = useSelector((state) => state.contacts.token);
 
-  const formSubmit = (e) => {
+  const formSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const options = {
@@ -23,7 +23,8 @@ export default function Register() {
       adminName: form.elements.nameAdmin.value,
       token,
     };
-    addClient(options);
+    const registerUs = await addClient(options);
+    alert(registerUs);
     form.reset();
   };
   return (

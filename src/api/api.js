@@ -1,5 +1,3 @@
-// import { useSelector } from "react-redux";
-
 import axios from "axios";
 axios.defaults.baseURL = "https://nodejs-homework-api-bx2p.onrender.com";
 
@@ -33,7 +31,6 @@ export const deleteFeedback = async (id) => {
   }
 };
 
-// export default getUsers;////////////////////////////////////////////////
 // https://climat-backend.onrender.com/users/...
 
 export const registerUser = async function (params) {

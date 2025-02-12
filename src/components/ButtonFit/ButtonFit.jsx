@@ -1,9 +1,9 @@
 import * as s from "components/ButtonFit/ButtonFit.styled";
 
-export default function ButtonFitback({ onOpen, cont, type = "button" }) {
+export default function ButtonFitback({ cont, type = "button" }) {
   return (
     <>
-      <s.ButtonStyle type={type} onClick={onOpen}>
+      <s.ButtonStyle type={type}>
         <s.SpanStyle>{cont}</s.SpanStyle>
       </s.ButtonStyle>
     </>

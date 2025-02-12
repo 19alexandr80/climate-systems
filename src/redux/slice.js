@@ -1,12 +1,18 @@
 import { createAction, createReducer, createSlice } from "@reduxjs/toolkit";
 
-import { logIn, register, logOut } from "./operations";
+import {
+  logIn,
+  register,
+  logOut,
+  addPhoneClient,
+  deletePhoneClient,
+} from "./operations";
 
 export const open = createAction("objj/incrA");
 export const close = createAction("obdjj/decrA");
 
 const initialState = {
-  value: [],
+  objectAll: [],
   user: { subscription: null, name: null, id: null },
   token: null,
   isLoggedIn: false,
@@ -52,31 +58,64 @@ export const contactsSlice = createSlice({
           state.user = action.payload.user;
           state.isLoggedIn = true;
           state.isLoading = false;
+          state.objectAll = action.payload.objec;
         }
       })
       .addCase(logOut.pending, handlePending)
       .addCase(logOut.rejected, handleRejected)
-      .addCase(logOut.fulfilled, (state) => {
-        // state.token = null;
-        // state.user.email = null;
-        // state.user.name = null;
-        // state.isLoggedIn = false;
-        // state.value = [];
+      .addCase(logOut.fulfilled, () => {
         return initialState;
+      })
+      .addCase(addPhoneClient.pending, handlePending)
+      .addCase(addPhoneClient.rejected, handleRejected)
+      .addCase(addPhoneClient.fulfilled, (state, action) => {
+        if (!action.payload) {
+          console.log(action.payload.message);
+          state.isLoading = false;
+          return alert(action.payload.message);
+        } else {
+          state.objectAll = state.objectAll.map((obj) => {
+            if (obj.name === action.payload.name) {
+              return action.payload;
+            }
+            return obj;
+          });
+          state.isLoggedIn = true;
+          state.isLoading = false;
+        }
+      })
+      .addCase(deletePhoneClient.pending, handlePending)
+      .addCase(deletePhoneClient.rejected, handleRejected)
+      .addCase(deletePhoneClient.fulfilled, (state, action) => {
+        if (!action.payload) {
+          console.log(action.payload.message);
+          state.isLoading = false;
+          return alert(action.payload.message);
+        } else {
+          state.objectAll = state.objectAll.map((obj) => {
+            if (obj.name === action.payload.name) {
+              return action.payload;
+            }
+            return obj;
+          });
+          state.isLoggedIn = true;
+          state.isLoading = false;
+        }
       }),
 });
-
+// deletePhoneClient
 export const myObjj = createReducer(
   {
-    modal: false,
+    modals: false,
+    formContent: [],
   },
   (builder) => {
     builder
       .addCase(open, (state, action) => {
-        state.modal = true;
+        state.modals = true;
       })
       .addCase(close, (state, _) => {
-        state.modal = false;
+        state.modals = false;
       });
   }
 );

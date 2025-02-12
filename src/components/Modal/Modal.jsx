@@ -1,5 +1,8 @@
 import { createPortal } from "react-dom";
 import { useEffect, useState, useCallback } from "react";
+import { useDispatch } from "react-redux";
+
+import { close } from "../../redux/slice";
 
 import { addFeedback } from "api/api";
 
@@ -7,15 +10,18 @@ import * as s from "./Modal.styled";
 
 const ModalRoot = document.getElementById("modal-root");
 
-export default function Modal({ onClose }) {
+export default function Modal() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [comment, setComment] = useState("");
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Escape") {
-        onClose();
+        dispatch(close());
       }
     };
     const keyDown = (e) => {
@@ -34,7 +40,7 @@ export default function Modal({ onClose }) {
   });
   const handleBackdropClick = (e) => {
     if (e.currentTarget === e.target) {
-      onClose();
+      dispatch(close());
     }
   };
   const onCh = (e) => {
@@ -79,7 +85,7 @@ export default function Modal({ onClose }) {
     <>
       <s.ModalBack onClick={handleBackdropClick}>
         <s.ModalCont>
-          <s.CloseButton onClick={onClose}>
+          <s.CloseButton onClick={() => dispatch(close())}>
             <svg version="1" viewBox="0 0 48 48">
               <g fill="black">
                 <polygon points="5,18 19,6.3 19,29.7" />
