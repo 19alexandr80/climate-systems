@@ -147,3 +147,44 @@ export const deletePhoneAdmin = async (params) => {
     .catch((error) => alert(error));
   return objectNew;
 };
+// ==========================================================================
+export const addComentObject = async (params) => {
+  const { token, nameObject, elementName, chapter } = params;
+  const options = {
+    method: "PATCH",
+    body: JSON.stringify({
+      elementName,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const objectNew = await fetch(
+    `https://climat-backend.onrender.com/dataClient/chapterElement/${nameObject}?chapter=${chapter}`,
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return objectNew;
+};
+export const deleteComentObject = async (params) => {
+  const { token, nameObject, elementName, chapter } = params;
+  const options = {
+    method: "DELETE",
+    body: JSON.stringify({
+      elementName,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const objectNew = await fetch(
+    `https://climat-backend.onrender.com/dataClient/chapterElement/${nameObject}?chapter=${chapter}`,
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return objectNew;
+};

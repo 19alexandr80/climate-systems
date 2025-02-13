@@ -8,7 +8,7 @@ import * as s from "./Modal.styled";
 
 const ModalRoot = document.getElementById("modal-root");
 
-export default function Modal({ onClose }) {
+export default function Modal({ callback, formData: [] }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -47,7 +47,6 @@ export default function Modal({ onClose }) {
     // [name, telephone, comment, email]
     []
   );
-  const formData = ["name"];
 
   return createPortal(
     <>

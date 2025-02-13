@@ -7,6 +7,8 @@ import {
   getObjectsClient,
   addPhone,
   deletePhoneAdmin,
+  addComentObject,
+  deleteComentObject,
 } from "api/client";
 
 export const register = createAsyncThunk(
@@ -87,6 +89,28 @@ export const deletePhoneClient = createAsyncThunk(
     try {
       const res = await deletePhoneAdmin(credentials);
       // console.log(res);
+      return res;
+    } catch (error) {
+      return error.message;
+    }
+  }
+);
+export const addComentClient = createAsyncThunk(
+  "client/addComent",
+  async (credentials) => {
+    try {
+      const res = await addComentObject(credentials);
+      return res;
+    } catch (error) {
+      return error.message;
+    }
+  }
+);
+export const deleteComentClient = createAsyncThunk(
+  "client/deleteComent",
+  async (credentials) => {
+    try {
+      const res = await deleteComentObject(credentials);
       return res;
     } catch (error) {
       return error.message;

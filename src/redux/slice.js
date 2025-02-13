@@ -6,6 +6,8 @@ import {
   logOut,
   addPhoneClient,
   deletePhoneClient,
+  addComentClient,
+  deleteComentClient,
 } from "./operations";
 
 export const open = createAction("objj/incrA");
@@ -101,9 +103,45 @@ export const contactsSlice = createSlice({
           state.isLoggedIn = true;
           state.isLoading = false;
         }
+      })
+      .addCase(addComentClient.pending, handlePending)
+      .addCase(addComentClient.rejected, handleRejected)
+      .addCase(addComentClient.fulfilled, (state, action) => {
+        if (!action.payload) {
+          console.log(action.payload.message);
+          state.isLoading = false;
+          return alert(action.payload.message);
+        } else {
+          state.objectAll = state.objectAll.map((obj) => {
+            if (obj.name === action.payload.name) {
+              return action.payload;
+            }
+            return obj;
+          });
+          state.isLoggedIn = true;
+          state.isLoading = false;
+        }
+      })
+      .addCase(deleteComentClient.pending, handlePending)
+      .addCase(deleteComentClient.rejected, handleRejected)
+      .addCase(deleteComentClient.fulfilled, (state, action) => {
+        if (!action.payload) {
+          console.log(action.payload.message);
+          state.isLoading = false;
+          return alert(action.payload.message);
+        } else {
+          state.objectAll = state.objectAll.map((obj) => {
+            if (obj.name === action.payload.name) {
+              return action.payload;
+            }
+            return obj;
+          });
+          state.isLoggedIn = true;
+          state.isLoading = false;
+        }
       }),
 });
-// deletePhoneClient
+// deleteComentClient
 export const myObjj = createReducer(
   {
     modals: false,
