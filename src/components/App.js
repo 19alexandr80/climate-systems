@@ -6,6 +6,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
+import Magazine from "./Projects/Magazine/Magazine";
 
 const Main = lazy(() => import("./Main/Main"));
 const Projects = lazy(() => import("../components/Projects/Projects"));
@@ -15,7 +16,7 @@ const Contacts = lazy(() => import("../components/Contacts/Contacts"));
 const ObjectPage = lazy(() =>
   import("../components/Projects/ObjectPage/ObjectPage")
 );
-// ObjectPage
+// Magazine
 
 const Aircond = lazy(() => import("../components/Services/Aircond"));
 const Ventilation = lazy(() => import("../components/Services/Ventilation"));
@@ -32,7 +33,9 @@ function App() {
         <Route
           path="projects/:objectName"
           element={<PrivateRoute element={ObjectPage} redirecrTo="/" />}
-        />
+        >
+          <Route path="magazine" element={<Magazine />} />
+        </Route>
         <Route path="dmn" element={<Admin />} />
         <Route path="services" element={<Services />}>
           <Route path="aircond" element={<Aircond />} />

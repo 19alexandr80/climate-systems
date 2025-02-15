@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ButtonFitback from "components/ButtonFit/ButtonFit";
 
-export default function PhoneForm({ phoneSubmit, clouseForm }) {
+export default function PhoneForm({ phoneSubmit }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
@@ -21,8 +21,9 @@ export default function PhoneForm({ phoneSubmit, clouseForm }) {
   };
   const formSubmit = (e) => {
     e.preventDefault();
-
     phoneSubmit({ name, number });
+    setName("");
+    setNumber("");
   };
 
   return (
@@ -55,9 +56,6 @@ export default function PhoneForm({ phoneSubmit, clouseForm }) {
           </label>
         </div>
         <ButtonFitback cont={"add phone"} type={"submit"} />
-        <div onClick={() => clouseForm()}>
-          <ButtonFitback cont={"out"} />
-        </div>
       </form>
     </>
   );

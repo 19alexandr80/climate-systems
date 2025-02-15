@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Outlet, Link } from "react-router-dom";
 import {
   addPhoneClient,
   deletePhoneClient,
@@ -14,10 +14,7 @@ import AdminForm from "./ObjectPageForem/AdminForm";
 
 import { Container } from "../../stylesheet/Container.styled";
 
-// import * as s from "../Projects.styled";
-
 export default function ObjectPage() {
-  const [phoneForm, setPhoneForm] = useState(false);
   const [adminForm, setAdminForm] = useState(false);
 
   const dispatch = useDispatch();
@@ -48,11 +45,9 @@ export default function ObjectPage() {
   };
 
   const clouseForm = () => {
-    setPhoneForm(false);
     setAdminForm(false);
   };
   const adminSubmit = (name) => {
-    console.log(name);
     dispatch(
       addComentClient({
         elementName: name,
@@ -71,7 +66,6 @@ export default function ObjectPage() {
         nameObject: object.name,
       })
     );
-    clouseForm();
   };
   return (
     <>
@@ -91,7 +85,7 @@ export default function ObjectPage() {
               return (
                 <p key={p._id}>
                   {p.name}: {p.number}{" "}
-                  {phoneForm && (
+                  {adminForm && (
                     <button type="button" onClick={() => deletePhone(p._id)}>
                       delete
                     </button>
@@ -100,12 +94,8 @@ export default function ObjectPage() {
               );
             })}
 
-            {phoneForm ? (
+            {adminForm && (
               <PhoneForm phoneSubmit={phoneSubmit} clouseForm={clouseForm} />
-            ) : (
-              <div onClick={() => setPhoneForm(true)}>
-                <ButtonFitback cont={"add phone"} />
-              </div>
             )}
           </div>
         </div>
@@ -120,26 +110,31 @@ export default function ObjectPage() {
                     delete
                   </button>
                 )}
-                {/* <button type="button" onClick={() => deleteAdmin(ad)}>
-                  delete
-                </button> */}
               </p>
             );
           })}
-          {adminForm ? (
+          {adminForm && (
             <AdminForm adminSubmit={adminSubmit} clouseForm={clouseForm} />
-          ) : (
-            <div onClick={() => setAdminForm(true)}>
-              <ButtonFitback cont={"add admin"} />
-            </div>
           )}
         </div>
         <div>
           <h2>Document</h2>
         </div>
         <div>
-          <h2>Журнал</h2>
+          <Link to={"magazine"}>
+            <h2>Журнал</h2>
+          </Link>
+          <Outlet />
         </div>
+        {!adminForm ? (
+          <div onClick={() => setAdminForm(true)}>
+            <ButtonFitback cont={"Change"} />
+          </div>
+        ) : (
+          <div onClick={() => clouseForm()}>
+            <ButtonFitback cont={"out"} />
+          </div>
+        )}
       </Container>
     </>
   );

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ButtonFitback from "components/ButtonFit/ButtonFit";
 
-export default function AdminForm({ adminSubmit, clouseForm }) {
+export default function AdminForm({ adminSubmit }) {
   const [name, setName] = useState("");
 
   const onCh = (e) => {
@@ -10,8 +10,8 @@ export default function AdminForm({ adminSubmit, clouseForm }) {
   };
   const formSubmit = (e) => {
     e.preventDefault();
-
     adminSubmit(name);
+    setName("");
   };
 
   return (
@@ -31,9 +31,6 @@ export default function AdminForm({ adminSubmit, clouseForm }) {
           </label>
         </div>
         <ButtonFitback cont={"add admin"} type={"submit"} />
-        <div onClick={() => clouseForm()}>
-          <ButtonFitback cont={"out"} />
-        </div>
       </form>
     </>
   );
