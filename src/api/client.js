@@ -189,40 +189,17 @@ export const deleteComentObject = async (params) => {
   return objectNew;
 };
 // ============================_____________________==============================
-export const addMagazineObject = async (params) => {
-  const { token, nameObject, elementName } = params;
+export const getMagazinePage = async (params) => {
+  const { token, nameObject, pageMagazine } = params;
   const options = {
-    method: "PATCH",
-    body: JSON.stringify({
-      elementName,
-    }),
+    method: "GET",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${token}`,
     },
   };
   const objectNew = await fetch(
-    `https://climat-backend.onrender.com/dataClient/chapterElement/${nameObject}?chapter=magazine`,
-    options
-  )
-    .then((response) => response.json())
-    .catch((error) => alert(error));
-  return objectNew;
-};
-export const deleteMagazineObject = async (params) => {
-  const { token, nameObject, elementName } = params;
-  const options = {
-    method: "DELETE",
-    body: JSON.stringify({
-      elementName,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  const objectNew = await fetch(
-    `https://climat-backend.onrender.com/dataClient/chapterElement/${nameObject}?chapter=magazine`,
+    `https://climat-backend.onrender.com/dataClient/magazine/${nameObject}?page=${pageMagazine}`,
     options
   )
     .then((response) => response.json())

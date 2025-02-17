@@ -47,3 +47,8 @@ export const Ul = styled.ul`
   padding-left: 10px;
   list-style: none;
 `;
+
+export const ChengDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;

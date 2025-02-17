@@ -52,9 +52,9 @@ export const contactsSlice = createSlice({
       .addCase(logIn.rejected, handleRejected)
       .addCase(logIn.fulfilled, (state, action) => {
         if (!action.payload.token) {
-          console.log(action.payload.message);
+          console.log(action.error.message);
           state.isLoading = false;
-          return alert(action.payload.message);
+          return alert(action.error.message);
         } else {
           state.token = action.payload.token;
           state.user = action.payload.user;
@@ -72,9 +72,9 @@ export const contactsSlice = createSlice({
       .addCase(addPhoneClient.rejected, handleRejected)
       .addCase(addPhoneClient.fulfilled, (state, action) => {
         if (!action.payload) {
-          console.log(action.payload.message);
+          console.log(action.error.message);
           state.isLoading = false;
-          return alert(action.payload.message);
+          return alert(action.error.message);
         } else {
           state.objectAll = state.objectAll.map((obj) => {
             if (obj.name === action.payload.name) {
@@ -90,9 +90,9 @@ export const contactsSlice = createSlice({
       .addCase(deletePhoneClient.rejected, handleRejected)
       .addCase(deletePhoneClient.fulfilled, (state, action) => {
         if (!action.payload) {
-          console.log(action.payload.message);
+          console.log(action.error.message);
           state.isLoading = false;
-          return alert(action.payload.message);
+          return alert(action.error.message);
         } else {
           state.objectAll = state.objectAll.map((obj) => {
             if (obj.name === action.payload.name) {
@@ -108,9 +108,9 @@ export const contactsSlice = createSlice({
       .addCase(addComentClient.rejected, handleRejected)
       .addCase(addComentClient.fulfilled, (state, action) => {
         if (!action.payload) {
-          console.log(action.payload.message);
+          console.log(action.error.message);
           state.isLoading = false;
-          return alert(action.payload.message);
+          return alert(action.error.message);
         } else {
           state.objectAll = state.objectAll.map((obj) => {
             if (obj.name === action.payload.name) {
@@ -126,9 +126,9 @@ export const contactsSlice = createSlice({
       .addCase(deleteComentClient.rejected, handleRejected)
       .addCase(deleteComentClient.fulfilled, (state, action) => {
         if (!action.payload) {
-          console.log(action.payload.message);
+          console.log(action.error.message);
           state.isLoading = false;
-          return alert(action.payload.message);
+          return alert(action.error.message);
         } else {
           state.objectAll = state.objectAll.map((obj) => {
             if (obj.name === action.payload.name) {

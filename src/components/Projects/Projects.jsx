@@ -51,7 +51,9 @@ export default function Projects() {
                           ))}
                         </s.DropdownContent>
                       </s.DropdownDiv>
-                      <Link to={cast.name}>cheng</Link>
+                      <s.ChengDiv>
+                        <Link to={cast.name}>cheng</Link>
+                      </s.ChengDiv>
                     </li>
                   );
                 })}

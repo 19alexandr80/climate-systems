@@ -26,7 +26,6 @@ export default function Modal() {
     };
     const keyDown = (e) => {
       if (e.keyCode === 13) {
-        // console.log("najali enter");
         onSubmitForm(e);
       }
     };
