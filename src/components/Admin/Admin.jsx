@@ -47,6 +47,9 @@ export default function Admin() {
           <Link to={"/register"}>
             <ButtonFitback cont={"Регистрация object"} />
           </Link>
+          <Link to={"/register_user"}>
+            <ButtonFitback cont={"Регистрация user"} />
+          </Link>
           <h1>Хотели потрындеть</h1>
           {loding ? (
             <LoaderHourglass />

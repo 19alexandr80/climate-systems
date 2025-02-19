@@ -9,8 +9,9 @@ import {
   deleteComentObject,
   addComentObject,
 } from "api/client";
-
 import { LoaderHourglass } from "components/Loader/Loader";
+
+import * as s from "./Magazine.styled";
 
 export default function Magazine() {
   const [note, setNote] = useState("");
@@ -19,7 +20,6 @@ export default function Magazine() {
   const [page, setPage] = useState(1);
   const [buttonMore, setButtonMore] = useState(true);
   const [loding, setLoding] = useState(false);
-  // const dispatch = useDispatch();
   const params = useParams();
   const objectAll = useSelector((state) => state.contacts.objectAll);
   const token = useRef(useSelector((state) => state.contacts.token));
@@ -126,7 +126,7 @@ export default function Magazine() {
       {loding ? (
         <LoaderHourglass />
       ) : (
-        <div>
+        <s.MagazineDiv>
           {magazinePage.length < 1 ? (
             <div> no data</div>
           ) : (
@@ -162,24 +162,8 @@ export default function Magazine() {
               Отправить
             </button>
           </form>
-        </div>
+        </s.MagazineDiv>
       )}
-
-      {/* <form>
-        <label>
-          message
-          <textarea
-            name="message"
-            cols={30}
-            rows={15}
-            onChange={onCh}
-            value={note}
-          ></textarea>
-        </label>
-        <button type="button" onClick={noteSubmit}>
-          Отправить
-        </button>
-      </form> */}
       <Link to={`/projects/${params.objectName}`}>close</Link>
     </>
   );

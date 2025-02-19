@@ -52,7 +52,7 @@ export default function Projects() {
                         </s.DropdownContent>
                       </s.DropdownDiv>
                       <s.ChengDiv>
-                        <Link to={cast.name}>cheng</Link>
+                        <Link to={cast.name}>More details</Link>
                       </s.ChengDiv>
                     </li>
                   );

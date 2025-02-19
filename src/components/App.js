@@ -2,10 +2,11 @@ import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "./layout";
-import { PrivateRoute } from "./PrivateRoute";
+import { PrivateRoute, PrivateRouteAdmin } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
+import RegisterUser from "./Register/RegisterUser";
 import Magazine from "./Projects/Magazine/Magazine";
 
 const Main = lazy(() => import("./Main/Main"));
@@ -36,7 +37,11 @@ function App() {
         >
           <Route path="magazine" element={<Magazine />} />
         </Route>
-        <Route path="dmn" element={<Admin />} />
+        {/* <Route path="dmn" element={<Admin />} /> */}
+        <Route
+          path="dmn"
+          element={<PrivateRouteAdmin element={Admin} redirecrTo="/projects" />}
+        />
         <Route path="services" element={<Services />}>
           <Route path="aircond" element={<Aircond />} />
           <Route path="ventilation" element={<Ventilation />} />
@@ -49,6 +54,12 @@ function App() {
         <Route
           path="register"
           element={<PrivateRoute element={Register} redirecrTo="/projects" />}
+        />
+        <Route
+          path="register_user"
+          element={
+            <PrivateRoute element={RegisterUser} redirecrTo="/projects" />
+          }
         />
       </Route>
     </Routes>

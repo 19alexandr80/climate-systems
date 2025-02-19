@@ -48,20 +48,24 @@ export default function Register() {
               <input type="text" name="adress" />
             </label>
             <div>
-              <label>
-                namePhone
-                <input type="text" name="namePhone" />
-              </label>
-              <label>
-                Number
-                <input type="phone" name="phone" />
-              </label>
+              <p>
+                <label>
+                  namePhone
+                  <input type="text" name="namePhone" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Number
+                  <input type="phone" name="phone" />
+                </label>
+              </p>
             </div>
             <label>
               Name Admin
               <input type="text" name="nameAdmin" />
             </label>
-            <ButtonFitback cont={"Add Client"} type={"submit"} />
+            <ButtonFitback cont={"Add Object"} type={"submit"} />
           </s.loginForm>
         </div>
       </Container>
