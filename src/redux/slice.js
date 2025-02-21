@@ -52,9 +52,8 @@ export const contactsSlice = createSlice({
       .addCase(logIn.rejected, handleRejected)
       .addCase(logIn.fulfilled, (state, action) => {
         if (!action.payload.token) {
-          console.log(action.error.message);
           state.isLoading = false;
-          return alert(action.error.message);
+          return alert(action.payload);
         } else {
           state.token = action.payload.token;
           state.user = action.payload.user;

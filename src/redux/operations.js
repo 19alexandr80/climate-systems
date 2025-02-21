@@ -27,6 +27,9 @@ export const register = createAsyncThunk(
 export const logIn = createAsyncThunk("auth/login", async (credentials) => {
   try {
     const res = await loginUser(credentials);
+    if (res.message) {
+      return res.message;
+    }
     const params = {
       name: res.user.name,
       token: res.token,
@@ -61,6 +64,7 @@ export const logIn = createAsyncThunk("auth/login", async (credentials) => {
         alert("Объект не найден");
     }
   } catch (error) {
+    console.log(error);
     return error.message;
   }
 });

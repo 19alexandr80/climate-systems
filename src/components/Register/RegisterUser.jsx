@@ -42,7 +42,6 @@ export default function RegisterUser() {
       subscription,
       token,
     };
-    console.log(options);
     try {
       setLoding(true);
       const data = await registerUser(options);
@@ -51,14 +50,12 @@ export default function RegisterUser() {
         setLoding(false);
         return;
       }
-      console.log(data);
+      alert(`User ${data.user.name} add`);
       setLoding(false);
     } catch (error) {
       setLoding(false);
       alert("shota ne tak");
     }
-    // const registerUs = await registerUser(options);
-    // alert(registerUs);
     setName("");
     setPassword("");
     setSubscription("");
