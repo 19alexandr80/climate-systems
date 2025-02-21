@@ -26,9 +26,7 @@ export default function Admin() {
             <ButtonFitback cont={"Регистрация user"} />
           </Link>
           {!feetBack && (
-            <div>
-              <ButtonFitback cont={"Feet Back"} onClicCullback={openFeet} />
-            </div>
+            <ButtonFitback cont={"Feet Back"} onClicCullback={openFeet} />
           )}
           {feetBack && <FeetBlock clouseFeet={clouseFeet} />}
         </div>

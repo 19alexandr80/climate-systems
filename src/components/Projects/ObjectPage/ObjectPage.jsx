@@ -33,13 +33,13 @@ export default function ObjectPage() {
       })
     );
   };
-  const deleteAdmin = (elementName) => {
+  const deleteAdmin = ({ elementName, chapter }) => {
     dispatch(
       deleteComentClient({
         elementName,
         token,
         nameObject: object.name,
-        chapter: "adminName",
+        chapter,
       })
     );
   };
@@ -47,13 +47,13 @@ export default function ObjectPage() {
   const clouseForm = () => {
     setAdminForm(false);
   };
-  const adminSubmit = (name) => {
+  const adminSubmit = ({ name, chapter }) => {
     dispatch(
       addComentClient({
         elementName: name,
         token,
         nameObject: object.name,
-        chapter: "adminName",
+        chapter,
       })
     );
   };
@@ -73,32 +73,53 @@ export default function ObjectPage() {
         <div>
           <h1>{object.name}</h1>
           <div>
-            <p>Client: {object.client}</p>
-          </div>
-          <div>
-            <h2>Adress</h2>
-            <p>{object.adress}</p>
-          </div>
-          <div>
-            <h2>Telefon</h2>
-            {object.phone.map((p) => {
+            <h2>Client:</h2>
+            {object.client.map((cl) => {
               return (
-                <p key={p._id}>
-                  {p.name}: {p.number}{" "}
+                <p key={cl}>
+                  {cl}
                   {adminForm && (
-                    <button type="button" onClick={() => deletePhone(p._id)}>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        deleteAdmin({ elementName: cl, chapter: "client" })
+                      }
+                    >
                       delete
                     </button>
                   )}
                 </p>
               );
             })}
-
             {adminForm && (
-              <PhoneForm phoneSubmit={phoneSubmit} clouseForm={clouseForm} />
+              <AdminForm adminSubmit={adminSubmit} chapter={"client"} />
             )}
           </div>
         </div>
+        <div>
+          <h2>Adress</h2>
+          <p>{object.adress}</p>
+        </div>
+        <div>
+          <h2>Telefon</h2>
+          {object.phone.map((p) => {
+            return (
+              <p key={p._id}>
+                {p.name}: {p.number}{" "}
+                {adminForm && (
+                  <button type="button" onClick={() => deletePhone(p._id)}>
+                    delete
+                  </button>
+                )}
+              </p>
+            );
+          })}
+
+          {adminForm && (
+            <PhoneForm phoneSubmit={phoneSubmit} clouseForm={clouseForm} />
+          )}
+        </div>
+
         <div>
           <h2>Admin</h2>
           {object.adminName.map((ad) => {
@@ -106,7 +127,12 @@ export default function ObjectPage() {
               <p key={ad}>
                 {ad}{" "}
                 {adminForm && (
-                  <button type="button" onClick={() => deleteAdmin(ad)}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      deleteAdmin({ elementName: ad, chapter: "adminName" })
+                    }
+                  >
                     delete
                   </button>
                 )}
@@ -114,7 +140,7 @@ export default function ObjectPage() {
             );
           })}
           {adminForm && (
-            <AdminForm adminSubmit={adminSubmit} clouseForm={clouseForm} />
+            <AdminForm adminSubmit={adminSubmit} chapter={"adminName"} />
           )}
         </div>
         <div>

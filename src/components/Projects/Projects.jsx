@@ -25,7 +25,12 @@ export default function Projects() {
                     <li key={`${cast._id}`}>
                       <h3>{cast.name}</h3>
                       <div>adress: {cast.adress}</div>
-                      <div>client: {cast.client}</div>
+                      <div>
+                        client:{" "}
+                        {cast.client.map((cl) => (
+                          <p key={cl}>{cl}</p>
+                        ))}
+                      </div>
                       <s.DropdownDiv>
                         <s.Dropbtn>telefone:</s.Dropbtn>
                         <s.DropdownContent

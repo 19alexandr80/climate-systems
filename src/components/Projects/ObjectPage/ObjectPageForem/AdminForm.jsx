@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ButtonFitback from "components/ButtonFit/ButtonFit";
 
-export default function AdminForm({ adminSubmit }) {
+export default function AdminForm({ adminSubmit, chapter }) {
   const [name, setName] = useState("");
 
   const onCh = (e) => {
@@ -10,7 +10,7 @@ export default function AdminForm({ adminSubmit }) {
   };
   const formSubmit = (e) => {
     e.preventDefault();
-    adminSubmit(name);
+    adminSubmit({ name, chapter });
     setName("");
   };
 

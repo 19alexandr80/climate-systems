@@ -17,8 +17,6 @@ const Contacts = lazy(() => import("../components/Contacts/Contacts"));
 const ObjectPage = lazy(() =>
   import("../components/Projects/ObjectPage/ObjectPage")
 );
-// Magazine
-
 const Aircond = lazy(() => import("../components/Services/Aircond"));
 const Ventilation = lazy(() => import("../components/Services/Ventilation"));
 
@@ -37,7 +35,6 @@ function App() {
         >
           <Route path="magazine" element={<Magazine />} />
         </Route>
-        {/* <Route path="dmn" element={<Admin />} /> */}
         <Route
           path="dmn"
           element={<PrivateRouteAdmin element={Admin} redirecrTo="/projects" />}
