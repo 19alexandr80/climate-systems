@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/climate-systems/static/css/main.3076ec6b.css",
-    "main.js": "/climate-systems/static/js/main.7a1f6d0d.js",
+    "main.js": "/climate-systems/static/js/main.aab9c549.js",
     "static/js/68.7409efe3.chunk.js": "/climate-systems/static/js/68.7409efe3.chunk.js",
     "static/js/3.a2a753f0.chunk.js": "/climate-systems/static/js/3.a2a753f0.chunk.js",
     "static/js/258.d795e774.chunk.js": "/climate-systems/static/js/258.d795e774.chunk.js",
@@ -71,7 +71,7 @@
     "static/media/next.svg": "/climate-systems/static/media/next.e92b78f8be3df1ec719a56ff38af5559.svg",
     "static/media/previous.svg": "/climate-systems/static/media/previous.a6ccc15117ea296c5c1c8d2094215a40.svg",
     "main.3076ec6b.css.map": "/climate-systems/static/css/main.3076ec6b.css.map",
-    "main.7a1f6d0d.js.map": "/climate-systems/static/js/main.7a1f6d0d.js.map",
+    "main.aab9c549.js.map": "/climate-systems/static/js/main.aab9c549.js.map",
     "68.7409efe3.chunk.js.map": "/climate-systems/static/js/68.7409efe3.chunk.js.map",
     "3.a2a753f0.chunk.js.map": "/climate-systems/static/js/3.a2a753f0.chunk.js.map",
     "258.d795e774.chunk.js.map": "/climate-systems/static/js/258.d795e774.chunk.js.map",
@@ -84,6 +84,6 @@
   },
   "entrypoints": [
     "static/css/main.3076ec6b.css",
-    "static/js/main.7a1f6d0d.js"
+    "static/js/main.aab9c549.js"
   ]
 }
