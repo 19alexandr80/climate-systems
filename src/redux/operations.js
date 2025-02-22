@@ -58,7 +58,7 @@ export const logIn = createAsyncThunk("auth/login", async (credentials) => {
           alert("sorry no information yetNONE");
           return;
         }
-        const resClinetObj = { ...res, objec: allObjects };
+        const resClinetObj = { ...res, objec: objectsClient };
         return resClinetObj;
       default:
         alert("Объект не найден");
