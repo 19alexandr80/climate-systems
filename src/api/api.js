@@ -86,3 +86,33 @@ export const logout = async function (token) {
     .catch((error) => alert(error));
   return userAuth;
 };
+// =================================================================
+export const changPassword = async function ({
+  token,
+  password,
+  name,
+  newPassword,
+}) {
+  const options = {
+    method: "PATCH",
+    body: JSON.stringify({
+      newPassword,
+      password,
+      name,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const userAuth = await fetch(
+    "https://climat-backend.onrender.com/users/changePassword",
+    options
+  )
+    .then((response) => {
+      console.log(response.json());
+      return response.json();
+    })
+    .catch((error) => alert(error));
+  return userAuth;
+};

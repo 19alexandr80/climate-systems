@@ -25,6 +25,9 @@ export default function Admin() {
           <Link to={"/register_user"}>
             <ButtonFitback cont={"Регистрация user"} />
           </Link>
+          <Link to={"/userPage"}>
+            <ButtonFitback cont={"User Page"} />
+          </Link>
           {!feetBack && (
             <ButtonFitback cont={"Feet Back"} onClicCullback={openFeet} />
           )}
