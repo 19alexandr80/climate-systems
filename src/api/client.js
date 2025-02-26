@@ -147,7 +147,6 @@ export const deletePhoneAdmin = async (params) => {
     .catch((error) => alert(error));
   return objectNew;
 };
-// ==========================================================================
 export const addComentObject = async (params) => {
   const { token, nameObject, elementName, chapter } = params;
   const options = {
@@ -206,3 +205,23 @@ export const getMagazinePage = async (params) => {
     .catch((error) => alert(error));
   return objectNew;
 };
+// ==========================================================================
+// export const deleteObject = async function ({ id, name }) {
+//   const options = {
+//     method: "POST",
+//     body: JSON.stringify({
+//       token,
+//     }),
+//     headers: {
+//       "Content-Type": "application/json; charset=UTF-8",
+//       Authorization: `Bearer ${token}`,
+//     },
+//   };
+//   const userAuth = await fetch(
+//     "https://climat-backend.onrender.com/users/logout",
+//     options
+//   )
+//     .then(() => alert("good by"))
+//     .catch((error) => alert(error));
+//   return userAuth;
+// };

@@ -12,6 +12,7 @@ export default function UserPage() {
   const name = useSelector((state) => state.contacts.user.name);
   const token = useSelector((state) => state.contacts.token);
   const [loding, setLoding] = useState(false);
+  const [passShow, setPassShow] = useState("password");
 
   const onCh = (e) => {
     switch (e.currentTarget.name) {
@@ -42,10 +43,18 @@ export default function UserPage() {
       setLoding(false);
       setPassword("");
       setPasswordNew("");
+      setPassShow("password");
     } catch (error) {
-      alert(error);
+      alert("Что-то пошло не так, проверте введённые данные");
       setLoding(false);
     }
+  };
+  const onChPass = (e) => {
+    if (e.target.checked) {
+      setPassShow("text");
+      return;
+    }
+    setPassShow("password");
   };
   return (
     <>
@@ -58,7 +67,7 @@ export default function UserPage() {
             Password
             <input
               onChange={onCh}
-              type="password"
+              type={passShow}
               name="password"
               value={password}
               placeholder="Password"
@@ -69,12 +78,16 @@ export default function UserPage() {
             New password
             <input
               onChange={onCh}
-              type="password"
+              type={passShow}
               name="passwordNew"
               value={passwordNew}
               placeholder="New Password"
               required
             />
+          </label>
+          <label>
+            Show password
+            <input onChange={onChPass} type="checkbox" name="passwordNew" />
           </label>
           <ButtonFitback type="submit" cont={"Cheng Password"} />
         </form>

@@ -86,7 +86,6 @@ export const logout = async function (token) {
     .catch((error) => alert(error));
   return userAuth;
 };
-// =================================================================
 export const changPassword = async function ({
   token,
   password,
@@ -110,9 +109,26 @@ export const changPassword = async function ({
     options
   )
     .then((response) => {
-      console.log(response.json());
       return response.json();
     })
     .catch((error) => alert(error));
   return userAuth;
 };
+// ================================================================
+export const getAllUsers = async function (token) {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const userAuth = await fetch(
+    "https://climat-backend.onrender.com/users/allUsers",
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return userAuth;
+};
+// ===============================================================================

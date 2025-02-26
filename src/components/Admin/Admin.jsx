@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Container } from "../stylesheet/Container.styled";
 import FeetBlock from "./FeetBlock";
 import ButtonFitback from "components/ButtonFit/ButtonFit";
+import AllUsers from "./AllUsers";
 // import { LoaderHourglass } from "components/Loader/Loader";
 
 export default function Admin() {
@@ -33,6 +34,7 @@ export default function Admin() {
           )}
           {feetBack && <FeetBlock clouseFeet={clouseFeet} />}
         </div>
+        <AllUsers />
       </Container>
     </>
   );

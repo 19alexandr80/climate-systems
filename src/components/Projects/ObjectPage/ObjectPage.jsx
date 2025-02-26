@@ -153,12 +153,16 @@ export default function ObjectPage() {
           <Outlet />
         </div>
         {!adminForm ? (
-          <div onClick={() => setAdminForm(true)}>
-            <ButtonFitback cont={"Change"} />
+          <div>
+            <ButtonFitback
+              cont={"Change"}
+              onClicCullback={() => setAdminForm(true)}
+            />
           </div>
         ) : (
-          <div onClick={() => clouseForm()}>
-            <ButtonFitback cont={"out"} />
+          <div>
+            <ButtonFitback cont={"out"} onClicCullback={clouseForm} />
+            <ButtonFitback cont={"Delete"} />
           </div>
         )}
       </Container>
