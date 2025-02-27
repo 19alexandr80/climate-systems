@@ -132,3 +132,22 @@ export const getAllUsers = async function (token) {
   return userAuth;
 };
 // ===============================================================================
+export const deleteUser = async function ({ token, id }) {
+  const options = {
+    method: "DELETE",
+    body: JSON.stringify({
+      id,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const userAuth = await fetch(
+    "https://climat-backend.onrender.com/users/deleteUser",
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return userAuth;
+};

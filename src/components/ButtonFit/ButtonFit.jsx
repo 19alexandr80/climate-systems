@@ -4,10 +4,11 @@ export default function ButtonFitback({
   cont,
   type = "button",
   onClicCullback = null,
+  argument = null,
 }) {
   const onCl = () => {
     if (onClicCullback) {
-      onClicCullback();
+      onClicCullback(argument);
     }
     return;
   };
