@@ -9,6 +9,7 @@ import {
   deletePhoneAdmin,
   addComentObject,
   deleteComentObject,
+  deleteObject,
 } from "api/client";
 
 export const register = createAsyncThunk(
@@ -43,6 +44,13 @@ export const logIn = createAsyncThunk("auth/login", async (credentials) => {
           return;
         }
         const resAllObj = { ...res, objec: allObjects };
+        // =========================================================
+        const resss = resAllObj.objec.map((ob) => {
+          delete ob.magazine;
+          return ob;
+        });
+        resAllObj.objec = resss;
+        // =========================================================
         return resAllObj;
       case "admin":
         const objectsAdmin = await getObjectsAdmin(params);
@@ -89,10 +97,8 @@ export const addPhoneClient = createAsyncThunk(
 export const deletePhoneClient = createAsyncThunk(
   "client/deletePhone",
   async (credentials) => {
-    // console.log(credentials);
     try {
       const res = await deletePhoneAdmin(credentials);
-      // console.log(res);
       return res;
     } catch (error) {
       return error.message;
@@ -115,6 +121,18 @@ export const deleteComentClient = createAsyncThunk(
   async (credentials) => {
     try {
       const res = await deleteComentObject(credentials);
+      return res;
+    } catch (error) {
+      return error.message;
+    }
+  }
+);
+// ==========================================================
+export const completeDeleteObject = createAsyncThunk(
+  "client/deleteObject",
+  async (credentials) => {
+    try {
+      const res = await deleteObject(credentials);
       return res;
     } catch (error) {
       return error.message;

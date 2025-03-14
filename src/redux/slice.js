@@ -8,6 +8,7 @@ import {
   deletePhoneClient,
   addComentClient,
   deleteComentClient,
+  completeDeleteObject,
 } from "./operations";
 
 export const open = createAction("objj/incrA");
@@ -138,9 +139,23 @@ export const contactsSlice = createSlice({
           state.isLoggedIn = true;
           state.isLoading = false;
         }
+      })
+      .addCase(completeDeleteObject.pending, handlePending)
+      .addCase(completeDeleteObject.rejected, handleRejected)
+      .addCase(completeDeleteObject.fulfilled, (state, action) => {
+        if (!action.payload) {
+          console.log(action.error.message);
+          state.isLoading = false;
+          return alert(action.error.message);
+        } else {
+          state.objectAll = state.objectAll.filter((obj) => {
+            return action.payload !== obj.name;
+          });
+          state.isLoggedIn = true;
+          state.isLoading = false;
+        }
       }),
 });
-// deleteComentClient
 export const myObjj = createReducer(
   {
     modals: false,

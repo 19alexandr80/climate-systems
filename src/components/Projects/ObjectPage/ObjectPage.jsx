@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, Outlet, Link } from "react-router-dom";
+import { useParams, Outlet, Link, useNavigate } from "react-router-dom";
 import {
   addPhoneClient,
   deletePhoneClient,
   addComentClient,
   deleteComentClient,
+  completeDeleteObject,
 } from "../../../redux/operations";
 
 import ButtonFitback from "components/ButtonFit/ButtonFit";
@@ -16,6 +17,8 @@ import { Container } from "../../stylesheet/Container.styled";
 
 export default function ObjectPage() {
   const [adminForm, setAdminForm] = useState(false);
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const objectAll = useSelector((state) => state.contacts.objectAll);
@@ -66,6 +69,15 @@ export default function ObjectPage() {
         nameObject: object.name,
       })
     );
+  };
+  const deleteObject = () => {
+    dispatch(
+      completeDeleteObject({
+        id: object._id,
+        token,
+      })
+    );
+    navigate("/projects");
   };
   return (
     <>
@@ -162,7 +174,7 @@ export default function ObjectPage() {
         ) : (
           <div>
             <ButtonFitback cont={"out"} onClicCullback={clouseForm} />
-            <ButtonFitback cont={"Delete"} />
+            <ButtonFitback cont={"Delete"} onClicCullback={deleteObject} />
           </div>
         )}
       </Container>

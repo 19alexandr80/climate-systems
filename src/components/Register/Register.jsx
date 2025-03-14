@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { addClient } from "api/client";
+import { addObject } from "api/client";
 
 import ButtonFitback from "components/ButtonFit/ButtonFit";
 
@@ -23,8 +23,8 @@ export default function Register() {
       adminName: form.elements.nameAdmin.value,
       token,
     };
-    const registerUs = await addClient(options);
-    alert(registerUs);
+    const registerUs = await addObject(options);
+    alert(`Object ${registerUs.name} add`);
     form.reset();
   };
   return (

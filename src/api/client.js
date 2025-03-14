@@ -1,12 +1,7 @@
 export const getObjectName = async function (params) {
   const { token, name } = params;
-  // console.log(name);
   const options = {
     method: "GET",
-    // body: JSON.stringify({
-    //   email,
-    //   token,
-    // }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${token}`,
@@ -21,7 +16,7 @@ export const getObjectName = async function (params) {
   return userAuth;
 };
 
-export const addClient = async (params) => {
+export const addObject = async (params) => {
   const { token, name, adminName, namePhone, adress, phone, client } = params;
   const options = {
     method: "POST",
@@ -46,7 +41,6 @@ export const addClient = async (params) => {
     options
   )
     .then((response) => {
-      alert("Objekt add");
       return response.json();
     })
     .catch((error) => alert(error));
@@ -187,7 +181,6 @@ export const deleteComentObject = async (params) => {
     .catch((error) => alert(error));
   return objectNew;
 };
-// ============================_____________________==============================
 export const getMagazinePage = async (params) => {
   const { token, nameObject, pageMagazine } = params;
   const options = {
@@ -205,23 +198,19 @@ export const getMagazinePage = async (params) => {
     .catch((error) => alert(error));
   return objectNew;
 };
-// ==========================================================================
-// export const deleteObject = async function ({ id, name }) {
-//   const options = {
-//     method: "POST",
-//     body: JSON.stringify({
-//       token,
-//     }),
-//     headers: {
-//       "Content-Type": "application/json; charset=UTF-8",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
-//   const userAuth = await fetch(
-//     "https://climat-backend.onrender.com/users/logout",
-//     options
-//   )
-//     .then(() => alert("good by"))
-//     .catch((error) => alert(error));
-//   return userAuth;
-// };
+export const deleteObject = async function ({ id, token }) {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const userAuth = await fetch(
+    `https://climat-backend.onrender.com/dataClient/deleteObject/${id}`,
+    options
+  )
+    .then((response) => response.json())
+    .catch((error) => alert(error));
+  return userAuth;
+};
