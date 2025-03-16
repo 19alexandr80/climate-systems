@@ -133,7 +133,7 @@ export default function Magazine() {
             magazinePage.map((not) => {
               return (
                 <div key={not._id}>
-                  <p>{not.note}</p>
+                  <s.MagazineNote>{not.note}</s.MagazineNote>
                   <p>{not.date.split("T")[0]}</p>
                   <button type="button" onClick={() => deleteNote(not._id)}>
                     delete

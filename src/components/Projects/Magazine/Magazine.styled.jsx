@@ -8,3 +8,6 @@ export const MagazineDiv = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
 `;
+export const MagazineNote = styled.p`
+  white-space: pre-wrap;
+`;
